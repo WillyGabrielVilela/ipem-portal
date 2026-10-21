@@ -1,5 +1,7 @@
 import SiteButton from "@/components/SiteButton";
 import SiteCard from "@/components/SiteCard";
+import SiteDivider from "@/components/SiteDivider";
+import SiteTag from "@/components/SiteTag";
 import { news } from "@/data/news";
 
 const quickLinks = [
@@ -26,12 +28,12 @@ export default function HomePage() {
         </div>
         <div className="hero-visual" role="img" aria-label="Fotografia da ação de fiscalização do IPEM-PE">
           <img src={lead.image} alt={lead.alt} />
-          <div className="hero-caption"><span>Notícia em destaque</span><a href={lead.url}>{lead.title} ↗</a></div>
+          <div className="hero-caption"><span className="hero-tag"><SiteTag value="Notícia em destaque" severity="info" /></span><a href={lead.url}>{lead.title} ↗</a></div>
         </div>
       </div>
     </section>
     <section className="container section-block" aria-labelledby="acessos-title">
-      <div className="section-heading"><div><p className="eyebrow">Encontre o que precisa</p><h2 id="acessos-title">Acesso rápido</h2></div><p>Principais canais do Instituto em um só lugar.</p></div>
+      <div className="section-heading"><div><p className="eyebrow">Encontre o que precisa</p><h2 id="acessos-title">Acesso rápido</h2></div><p>Principais canais do Instituto em um só lugar.</p></div><SiteDivider />
       <div className="quick-grid">
         {quickLinks.map((item) => <SiteCard key={item.title} className="quick-card" elevation="low" header={<span className="quick-symbol" aria-hidden="true">{item.symbol}</span>} title={item.title}>
           <p>{item.description}</p><a className="card-link" href={item.href}>Acessar <span aria-hidden="true">→</span></a>
@@ -40,7 +42,7 @@ export default function HomePage() {
     </section>
     <section className="section-tint">
       <div className="container section-block">
-        <div className="section-heading"><div><p className="eyebrow">Acompanhe o Instituto</p><h2>Últimas notícias</h2></div><SiteButton label="Todas as notícias" href="/noticias" link icon="arrow-up-right" /></div>
+        <div className="section-heading"><div><p className="eyebrow">Acompanhe o Instituto</p><h2>Últimas notícias</h2></div><SiteButton label="Todas as notícias" href="/noticias" link icon="arrow-up-right" /></div><SiteDivider />
         <div className="news-grid">
           {news.slice(1,4).map((item) => <SiteCard key={item.url} className="news-card" elevation="low" header={<a className="news-image" href={item.url}><img src={item.image} alt={item.alt} loading="lazy" /></a>}>
             <div className="news-content"><time>{item.date}</time><h3><a href={item.url}>{item.title}</a></h3><p>{item.excerpt}</p><a className="text-link" href={item.url}>Ler notícia ↗</a></div>

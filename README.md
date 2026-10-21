@@ -47,3 +47,21 @@ Os botões de chamada para ação da Home usam `Button` de `@uigovpe/components`
 - `Card`, encapsulado em `src/components/SiteCard.tsx`, para os cartões de acesso rápido, notícias, serviços e transparência.
 
 A integração deve ser validada localmente contra a versão instalada de `@uigovpe/components`; confirme também estilos e acessibilidade antes de homologar.
+
+### Dialog (cookies)
+
+O botão de cookies da GovBar abre o componente oficial `Dialog` de
+`@uigovpe/components`, com informações provisórias sobre privacidade e um botão
+para fechar. O texto deixa explícito que a política e o mecanismo de consentimento
+precisam ser validados; não há armazenamento de consentimento implementado.
+
+
+### Componentes Gov PE adicionais
+- `Divider`, encapsulado em `src/components/SiteDivider.tsx`, separa visualmente blocos de conteúdo.
+- `Tag`, encapsulado em `src/components/SiteTag.tsx`, identifica a notícia em destaque e rotula a lista de publicações.
+- `Message`, encapsulado em `src/components/SiteMessage.tsx`, apresenta avisos de validação nas páginas de Serviços, Transparência e Contato.
+
+### Componentes da biblioteca não adicionados nesta etapa
+`InputCurrency`, `InputFile`, `InputMasked`, `InputNumber`, `InputPassword`, `InputSwitch`, `InputText`, `InputTextarea`, `MultiSelect`, `RadioButton`, `Stepper`, `TabView`, `Table`, `Paginator`, `Filter` e `Toast` não foram inseridos artificialmente: as páginas atuais não possuem formulário, fluxo por etapas, tabela de dados ou operação que justifique esses controles. `Dropdown` e `Menu` também não substituíram a navegação existente porque a API detalhada do Storybook não pôde ser consultada nesta sessão; a navegação atual permanece funcional. A busca oficial (`Search`) deve ser integrada após validar suas propriedades e o comportamento esperado na documentação. `Tooltip` também ficou de fora porque não há, neste momento, um controle cuja informação essencial dependa de dica flutuante.
+
+As integrações adicionais precisam ser verificadas com `npm install`, `npm run typecheck`, `npm run lint` e `npm run build`, usando a versão instalada de `@uigovpe/components`.
