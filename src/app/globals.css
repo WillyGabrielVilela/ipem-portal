@@ -141,3 +141,28 @@ img { display: block; max-width: 100%; }
 
 .official-banner { padding-bottom: 32px; }
 .official-banner img { width: 100%; height: auto; }
+
+/* Alinhamento dos botões oficiais @uigovpe/components nas áreas de chamada para ação. */
+.hero-actions { align-items: center; }
+.hero-actions > * { flex: 0 0 auto; }
+.transparency-callout > button { flex-shrink: 0; }
+.section-heading > button { flex-shrink: 0; }
+@media (max-width: 560px) {
+  .hero-actions { align-items: stretch; }
+  .hero-actions > * { width: 100%; }
+  .transparency-callout > button { width: 100%; }
+}
+
+
+/* Cartões com o componente oficial Card do Design System Gov PE */
+.site-card-shell { min-width: 0; height: 100%; }
+.site-card-shell > * { height: 100%; }
+.site-card-shell .quick-symbol { display: inline-flex; align-items: center; justify-content: center; width: 2.7rem; height: 2.7rem; border-radius: .7rem; background: var(--brand-soft, #e8f2f8); color: var(--brand, #005a9c); font-size: 1.35rem; font-weight: 700; }
+.site-card-shell .quick-card p, .site-card-shell .news-content p { margin-top: .65rem; }
+.site-card-shell .news-image { display: block; overflow: hidden; }
+.site-card-shell .news-image img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.resource-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.resource-description { margin: 0 0 .75rem; }
+.resource-url { display: block; overflow-wrap: anywhere; color: var(--muted, #586675); font-size: .78rem; }
+@media (max-width: 900px) { .resource-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .resource-card-grid { grid-template-columns: 1fr; } }

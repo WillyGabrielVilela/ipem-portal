@@ -36,3 +36,14 @@ Se `npm install` ou `npm run build` falhar por incompatibilidade dos pacotes, gu
 
 ## Segurança
 Este projeto é local e não altera o WordPress ou o site de produção. Não adicionar senhas, tokens, dados pessoais ou arquivos internos no repositório.
+
+## Botões do Design System PE
+Os botões de chamada para ação da Home usam `Button` de `@uigovpe/components`, encapsulado em `src/components/SiteButton.tsx`. O wrapper recebe um destino `href` e navega para ele ao clicar. Os cartões e links de navegação continuam sendo links HTML, por semântica e acessibilidade; não foram convertidos artificialmente em botões. Validar aparência, tipos e ícones com a versão instalada da biblioteca durante `npm run typecheck` e `npm run build`.
+
+
+### Componentes oficiais Gov PE usados
+- `GovBar` para a barra governamental e recursos de acessibilidade.
+- `Button`, encapsulado em `src/components/SiteButton.tsx`, para chamadas à ação.
+- `Card`, encapsulado em `src/components/SiteCard.tsx`, para os cartões de acesso rápido, notícias, serviços e transparência.
+
+A integração deve ser validada localmente contra a versão instalada de `@uigovpe/components`; confirme também estilos e acessibilidade antes de homologar.
