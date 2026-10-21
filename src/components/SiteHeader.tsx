@@ -13,7 +13,7 @@ const menus = [
   { label: "Atividades", items: [
     ["CML", "/cml"],
     ["Pré-Embalados", "/pre-medidos"],
-    ["CQI", "https://www.ipem.pe.gov.br/cqi/"],
+    ["CQI", "/cqi"],
   ]},
   { label: "Notícias", href: "/noticias", items: [["Todas as notícias", "https://www.ipem.pe.gov.br/category/noticias/"]]},
   { label: "Legislação", items: [["Legislação Federal e Normas do Inmetro", "https://www.ipem.pe.gov.br/normas-tecnicas/"]]},

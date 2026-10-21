@@ -86,3 +86,5 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 
 - Rota local: `/pre-medidos`.
 - Conteúdo organizado a partir do HTML de referência fornecido, com aviso de validação institucional.
+
+- `/cqi`: página de Qualidade Industrial baseada no HTML de referência enviado; confirmar dados técnicos e competências com a área responsável antes de publicar.

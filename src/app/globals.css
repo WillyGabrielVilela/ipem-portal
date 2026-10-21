@@ -338,3 +338,27 @@ img { display: block; max-width: 100%; }
 .prem-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
 @media (max-width: 800px) { .prem-grid, .prem-grid-two { grid-template-columns: 1fr; } }
 @media (max-width: 680px) { .prem-page { padding-top: 28px; } .prem-contact { grid-template-columns: 1fr; padding: 20px; } .prem-actions { flex-direction: column; align-items: stretch; } .prem-actions > * { width: 100%; } }
+
+
+/* Atividades: Coordenadoria de Qualidade Industrial (CQI) */
+.cqi-page { padding-top: 42px; padding-bottom: 64px; }
+.cqi-heading { max-width: 940px; margin-bottom: 28px; }
+.cqi-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.cqi-heading > p:not(.eyebrow) { color: var(--pe-muted); line-height: 1.75; }
+.cqi-page .site-message { margin: 20px 0 30px; }
+.cqi-section { padding: 24px 0 30px; }
+.cqi-section-heading { max-width: 940px; margin-bottom: 22px; }
+.cqi-section-heading h2, .cqi-impact h2, .cqi-next-steps h2 { margin: 12px 0 8px; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.cqi-section-heading p, .cqi-next-steps > p { color: var(--pe-muted); line-height: 1.7; }
+.cqi-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.cqi-page .site-card-shell p { line-height: 1.75; }
+.cqi-page .site-card-shell h3 { margin: 20px 0 10px; font-size: 1.05rem; }
+.cqi-list { padding-left: 1.25rem; line-height: 1.8; }
+.cqi-list li + li { margin-top: 4px; }
+.cqi-impact { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 22px; align-items: start; margin: 30px 0; padding: 28px; border: 1px solid var(--pe-border, #d8e1e8); border-radius: var(--pe-radius, 12px); background: var(--brand-soft, #f1f7fb); }
+.cqi-impact-symbol { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--pe-blue, #005a9c); color: #fff; font-size: 2.1rem; font-weight: 800; }
+.cqi-impact p { line-height: 1.75; }
+.cqi-next-steps { padding-top: 20px; }
+.cqi-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+@media (max-width: 900px) { .cqi-grid { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .cqi-page { padding-top: 28px; } .cqi-impact { grid-template-columns: 1fr; padding: 20px; } .cqi-actions { flex-direction: column; align-items: stretch; } .cqi-actions > * { width: 100%; } }
