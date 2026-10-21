@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11"/>
+	<link rel="pingback" href="https://www.ipem.pe.gov.br/xmlrpc.php"/>
+	<title>IPEM &#8211; Instituto de Pesos e Medidas de Pernambuco</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Feed para IPEM &raquo;" href="https://www.ipem.pe.gov.br/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para IPEM &raquo;" href="https://www.ipem.pe.gov.br/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/www.ipem.pe.gov.br\/wp-includes\/js\/wp-emoji.js?ver=4.9.8","twemoji":"https:\/\/www.ipem.pe.gov.br\/wp-includes\/js\/twemoji.js?ver=4.9.8"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Check if two sets of Emoji characters render the same.
+	 *
+	 * @param set1 array Set of Emoji characters.
+	 * @param set2 array Set of Emoji characters.
+	 * @returns {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji".
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 56826, 55356, 56819 ],
+					[ 55356, 56826, 8203, 55356, 56819 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447 ],
+					[ 55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447 ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * She's the hero Emoji deserves, but not the one it needs right now.
+				 *
+				 * To test for support, try to render a new emoji (female superhero),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (superhero + female sign).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[55358, 56760, 9792, 65039],
+					[55358, 56760, 8203, 9792, 65039]
+				);
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='dashicons-css'  href='https://www.ipem.pe.gov.br/wp-includes/css/dashicons.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='everest-forms-general-css'  href='https://www.ipem.pe.gov.br/wp-content/plugins/everest-forms/assets/css/everest-forms.css?ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='Rich_Web_Video_Slider-css'  href='https://www.ipem.pe.gov.br/wp-content/plugins/slider-video/Style/Rich-Web-Video-Slider-Widget.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesomeSl-css-css'  href='https://www.ipem.pe.gov.br/wp-content/plugins/slider-video/Style/richwebicons.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wpos-slick-style-css'  href='https://www.ipem.pe.gov.br/wp-content/plugins/wp-responsive-recent-post-slider/assets/css/slick.css?ver=1.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wppsac-public-style-css'  href='https://www.ipem.pe.gov.br/wp-content/plugins/wp-responsive-recent-post-slider/assets/css/recent-post-style.css?ver=1.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='colormag_google_fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C600&#038;ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='colormag_style-css'  href='https://www.ipem.pe.gov.br/wp-content/themes/colormag/style.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='colormag-fontawesome-css'  href='https://www.ipem.pe.gov.br/wp-content/themes/colormag/fontawesome/css/font-awesome.css?ver=4.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='__EPYT__style-css'  href='https://www.ipem.pe.gov.br/wp-content/plugins/youtube-embed-plus/styles/ytprefs.css?ver=12.0.1' type='text/css' media='all' />
+<style id='__EPYT__style-inline-css' type='text/css'>
+
+                .epyt-gallery-thumb {
+                        width: 33.333%;
+                }
+                
+</style>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var object = {"ajaxurl":"https:\/\/www.ipem.pe.gov.br\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/slider-video/Scripts/Rich-Web-Video-Slider-Widget.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/colormag-custom.js?ver=4.9.8'></script>
+<!--[if lte IE 8]>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/html5shiv.min.js?ver=4.9.8'></script>
+<![endif]-->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _EPYT_ = {"ajaxurl":"https:\/\/www.ipem.pe.gov.br\/wp-admin\/admin-ajax.php","security":"3d84983de9","gallery_scrolloffset":"20","eppathtoscripts":"https:\/\/www.ipem.pe.gov.br\/wp-content\/plugins\/youtube-embed-plus\/scripts\/","epresponsiveselector":"[\"iframe.__youtube_prefs_widget__\"]","epdovol":"1","version":"12.0.1","evselector":"iframe.__youtube_prefs__[src], iframe[src*=\"youtube.com\/embed\/\"], iframe[src*=\"youtube-nocookie.com\/embed\/\"]","ajax_compat":"","ytapi_load":"light","stopMobileBuffer":"1","vi_active":"","vi_js_posttypes":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.js?ver=12.0.1'></script>
+<link rel='https://api.w.org/' href='https://www.ipem.pe.gov.br/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ipem.pe.gov.br/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.ipem.pe.gov.br/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+<meta name="generator" content="Everest Forms 1.2.4" />
+<link rel="canonical" href="https://www.ipem.pe.gov.br/" />
+<link rel='shortlink' href='https://www.ipem.pe.gov.br/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.ipem.pe.gov.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ipem.pe.gov.br%2F" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css" id="wp-custom-css">
+			.below-entry-meta {
+display: none;
+}
+#colophon, #colophon p {
+    font-size: 11px;
+}
+.widget_featured_posts .following-post .article-content .entry-title {
+    font-size: 16px;
+}		</style>
+	</head>
+
+<body class="home page-template-default page page-id-1487 everest-forms-no-js  wide better-responsive-menu">
+
+<iframe src="http://www2.ati.pe.gov.br/SiteAti-theme/topo-governo/topo-governo.html" scrolling="no" frameborder="0" width="100%" height="58px"></iframe>
+
+
+<div id="page" class="hfeed site">
+	
+	
+	<header id="masthead" class="site-header clearfix ">
+		<div id="header-text-nav-container" class="clearfix">
+
+						<div class="news-bar">
+				<div class="inner-wrap clearfix">
+					
+					        <div class="breaking-news">
+            <strong class="breaking-news-latest">Últimos:</strong>
+            <ul class="newsticker">
+				                    <li>
+                        <a href="https://www.ipem.pe.gov.br/2026/05/22/ipem-pe-identifica-irregularidades-em-balancas-durante-fiscalizacao-no-aeroporto-dos-guararapes/"
+                           title="Ipem-PE identifica irregularidades em balanças durante fiscalização no Aeroporto dos Guararapes">Ipem-PE identifica irregularidades em balanças durante fiscalização no Aeroporto dos Guararapes</a>
+                    </li>
+				                    <li>
+                        <a href="https://www.ipem.pe.gov.br/2025/12/17/ipem-pe-encontra-irregularidades-em-todos-os-bicos-de-combustivel-fiscalizados-em-posto-no-municipio-de-paulista/"
+                           title="Ipem-PE encontra irregularidades em todos os bicos de combustível fiscalizados em posto no município de Paulista">Ipem-PE encontra irregularidades em todos os bicos de combustível fiscalizados em posto no município de Paulista</a>
+                    </li>
+				                    <li>
+                        <a href="https://www.ipem.pe.gov.br/2025/12/16/ipem-pe-apreende-21-balancas-irregulares-em-acao-de-fiscalizacao-no-municipio-de-ipojuca/"
+                           title="Ipem-PE apreende 21 balanças irregulares em ação de fiscalização no município de Ipojuca">Ipem-PE apreende 21 balanças irregulares em ação de fiscalização no município de Ipojuca</a>
+                    </li>
+				                    <li>
+                        <a href="https://www.ipem.pe.gov.br/2025/12/11/reuniao-entre-ipem-pe-e-sindsserpe-aborda-pautas-da-campanha-salarial-dos-servidores/"
+                           title="Reunião entre Ipem-PE e Sindsserpe aborda pautas da campanha salarial dos servidores">Reunião entre Ipem-PE e Sindsserpe aborda pautas da campanha salarial dos servidores</a>
+                    </li>
+				                    <li>
+                        <a href="https://www.ipem.pe.gov.br/2025/12/04/ipem-pe-reprova-48-balancas-durante-fiscalizacao-no-aeroporto-internacional-dos-guararapes-e-reforca-acoes-de-protecao-ao-consumidor/"
+                           title="Ipem-PE reprova 48 balanças durante fiscalização no Aeroporto Internacional dos Guararapes e reforça ações de proteção ao consumidor">Ipem-PE reprova 48 balanças durante fiscalização no Aeroporto Internacional dos Guararapes e reforça ações de proteção ao consumidor</a>
+                    </li>
+				            </ul>
+        </div>
+		
+							<div class="social-links clearfix">
+			<ul>
+				<li><a href="https://instagram.com/ipempe" target="_blank"><i class="fa fa-instagram"></i></a></li>			</ul>
+		</div><!-- .social-links -->
+						</div>
+			</div>
+		
+			
+			
+		<div class="inner-wrap">
+
+			<div id="header-text-nav-wrap" class="clearfix">
+				<div id="header-left-section">
+										<div id="header-text" class="">
+													<h1 id="site-title">
+								<a href="https://www.ipem.pe.gov.br/" title="IPEM" rel="home">IPEM</a>
+							</h1>
+																		<p id="site-description">Instituto de Pesos e Medidas de Pernambuco</p>
+						<!-- #site-description -->
+					</div><!-- #header-text -->
+				</div><!-- #header-left-section -->
+				<div id="header-right-section">
+									</div><!-- #header-right-section -->
+
+			</div><!-- #header-text-nav-wrap -->
+
+		</div><!-- .inner-wrap -->
+
+		
+			
+			
+		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
+			<div class="inner-wrap clearfix">
+				
+					<div class="home-icon front_page_on">
+						<a href="https://www.ipem.pe.gov.br/" title="IPEM"><i class="fa fa-home"></i></a>
+					</div>
+
+					
+				<h4 class="menu-toggle"></h4>
+				<div class="menu-primary-container"><ul id="menu-primary" class="menu"><li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-427"><a href="https://www.ipem.pe.gov.br/historia/">Institucional</a>
+<ul class="sub-menu">
+	<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="https://www.ipem.pe.gov.br/historia/">História</a></li>
+	<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102"><a href="https://www.ipem.pe.gov.br/quem-somos/">Quem Somos</a></li>
+	<li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="https://www.ipem.pe.gov.br/diretoria/">Quem é Quem</a></li>
+	<li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a href="https://www.ipem.pe.gov.br/organograma/">Organograma</a></li>
+	<li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://www.ipem.pe.gov.br/unidades/">Unidades</a></li>
+</ul>
+</li>
+<li id="menu-item-106" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-106"><a href="https://www.ipem.pe.gov.br/category/noticias/">Atividades</a>
+<ul class="sub-menu">
+	<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://www.ipem.pe.gov.br/cml/">CML</a></li>
+	<li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://www.ipem.pe.gov.br/pre-medidos/">Pré Embalados</a></li>
+	<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://www.ipem.pe.gov.br/cqi/">CQI</a></li>
+</ul>
+</li>
+<li id="menu-item-206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-206"><a href="https://www.ipem.pe.gov.br/category/noticias/">Notícias</a></li>
+<li id="menu-item-111" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-111"><a href="https://www.ipem.pe.gov.br/category/noticias/">Legislação</a>
+<ul class="sub-menu">
+	<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://www.ipem.pe.gov.br/normas-tecnicas/">Legislação Federal e Normas do Inmetro</a></li>
+</ul>
+</li>
+<li id="menu-item-1015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1015"><a href="https://www.ipem.pe.gov.br/transparencia/">Transparência</a>
+<ul class="sub-menu">
+	<li id="menu-item-2137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2137"><a href="https://www.ipem.pe.gov.br/area-principal-da-transparencia-2/">Área Principal da Transparência</a></li>
+	<li id="menu-item-1930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1930"><a href="https://www.ipem.pe.gov.br/lei-geral-de-protecao-de-dados-pessoais-lgpd/">Lei Geral de Proteção de Dados Pessoais (LGPD)</a></li>
+	<li id="menu-item-1278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1278"><a href="https://www.ipem.pe.gov.br/plano-de-metas/">Plano de Metas</a></li>
+	<li id="menu-item-99" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99"><a href="https://www.ipem.pe.gov.br/editais-e-portarias/">Editais e Portarias</a></li>
+	<li id="menu-item-1573" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1573"><a href="https://www.ipem.pe.gov.br/notificacao-de-atuacao/">Editais de Notificação de Autuação</a></li>
+	<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="https://www.ipem.pe.gov.br/licitacao/">Licitações e Contratos</a></li>
+	<li id="menu-item-2160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2160"><a href="https://www.ipem.pe.gov.br/despesas/">Despesas</a></li>
+	<li id="menu-item-1029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1029"><a href="https://www.ipem.pe.gov.br/convenios-e-transferencias/">Convênios e Transferências</a></li>
+	<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="https://www.ipem.pe.gov.br/selecao-publica-simplificada/">Seleção Pública Simplificada</a></li>
+</ul>
+</li>
+<li id="menu-item-119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-119"><a href="https://www.ipem.pe.gov.br/category/noticias/">Atendimento</a>
+<ul class="sub-menu">
+	<li id="menu-item-2112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2112"><a href="https://www.ipem.pe.gov.br/perguntas-frequentes/">Perguntas Frequentes</a></li>
+	<li id="menu-item-971" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-971"><a href="https://www.ipem.pe.gov.br/https-servicos-rbmlq-gov-br-segundaviagru/">Portal de Serviços ao Cliente / Cidadão</a></li>
+	<li id="menu-item-1123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1123"><a href="https://www.ipem.pe.gov.br/juridico/">Departamento Jurídico &#8211; Ipem-PE</a></li>
+</ul>
+</li>
+<li id="menu-item-121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="https://www.ipem.pe.gov.br/formulario-de-denuncia/">Ouvidoria</a></li>
+</ul></div>
+				
+									<i class="fa fa-search search-top"></i>
+					<div class="search-form-top">
+						<form action="https://www.ipem.pe.gov.br/" class="search-form searchform clearfix" method="get">
+   <div class="search-wrap">
+      <input type="text" placeholder="Pesquisar" class="s field" name="s">
+      <button class="search-icon" type="submit"></button>
+   </div>
+</form><!-- .searchform -->					</div>
+							</div>
+		</nav>
+
+		
+		</div><!-- #header-text-nav-container -->
+
+		
+	</header>
+
+		
+	<div id="main" class="clearfix">
+		<div class="inner-wrap clearfix">
+	<div class="front-page-top-section clearfix">
+		<div class="widget_slider_area" style="width:100%">
+			<section id="text-4" class="widget widget_text clearfix">			<div class="textwidget">				<div class="wppsac-slick-slider-wrp wppsac-clearfix">
+					<div id="recent-post-slider-1" class="recent-post-slider design-2">
+						 <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2026/05/22/ipem-pe-identifica-irregularidades-em-balancas-durante-fiscalizacao-no-aeroporto-dos-guararapes/">Ipem-PE identifica irregularidades em balanças durante fiscalização no Aeroporto dos Guararapes</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) realizou, na última quarta-feira (20), uma operação de fiscalização no Aeroporto</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2026/05/22/ipem-pe-identifica-irregularidades-em-balancas-durante-fiscalizacao-no-aeroporto-dos-guararapes/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2026/05/IMG_7169-copia-site.jpg" alt="Ipem-PE identifica irregularidades em balanças durante fiscalização no Aeroporto dos Guararapes" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/12/17/ipem-pe-encontra-irregularidades-em-todos-os-bicos-de-combustivel-fiscalizados-em-posto-no-municipio-de-paulista/">Ipem-PE encontra irregularidades em todos os bicos de combustível fiscalizados em posto no município de Paulista</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) realizou, no sábado (13/12), uma ação de fiscalização em um posto</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/12/17/ipem-pe-encontra-irregularidades-em-todos-os-bicos-de-combustivel-fiscalizados-em-posto-no-municipio-de-paulista/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/12/IMG_6694site.jpg" alt="Ipem-PE encontra irregularidades em todos os bicos de combustível fiscalizados em posto no município de Paulista" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/12/16/ipem-pe-apreende-21-balancas-irregulares-em-acao-de-fiscalizacao-no-municipio-de-ipojuca/">Ipem-PE apreende 21 balanças irregulares em ação de fiscalização no município de Ipojuca</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">Em ação de fiscalização realizada no último sábado (13), o Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) apreendeu 21 balanças utilizadas em</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/12/16/ipem-pe-apreende-21-balancas-irregulares-em-acao-de-fiscalizacao-no-municipio-de-ipojuca/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-13-at-10.49.46-4-Editado.jpg" alt="Ipem-PE apreende 21 balanças irregulares em ação de fiscalização no município de Ipojuca" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/12/04/ipem-pe-reprova-48-balancas-durante-fiscalizacao-no-aeroporto-internacional-dos-guararapes-e-reforca-acoes-de-protecao-ao-consumidor/">Ipem-PE reprova 48 balanças durante fiscalização no Aeroporto Internacional dos Guararapes e reforça ações de proteção ao consumidor</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) realizou, nesta terça-feira (03/12), uma fiscalização em balanças utilizadas no Aeroporto</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/12/04/ipem-pe-reprova-48-balancas-durante-fiscalizacao-no-aeroporto-internacional-dos-guararapes-e-reforca-acoes-de-protecao-ao-consumidor/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/12/DSC09818.jpg" alt="Ipem-PE reprova 48 balanças durante fiscalização no Aeroporto Internacional dos Guararapes e reforça ações de proteção ao consumidor" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/11/06/inmetro-e-governo-de-pernambuco-entregam-nova-sede-do-ipem-com-foco-em-inovacao-e-fortalecimento-da-fiscalizacao/">Inmetro e Governo de Pernambuco entregam nova sede do Ipem com foco em inovação e fortalecimento da fiscalização</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">Reforma moderniza estrutura do Instituto de Pesos e Medidas e amplia a atuação em defesa do consumidor
+&nbsp;
+
+O Instituto de Pesos</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/11/06/inmetro-e-governo-de-pernambuco-entregam-nova-sede-do-ipem-com-foco-em-inovacao-e-fortalecimento-da-fiscalizacao/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/11/IMG_8543site.jpg" alt="Inmetro e Governo de Pernambuco entregam nova sede do Ipem com foco em inovação e fortalecimento da fiscalização" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/09/22/operacao-abastecimento-seguro-ipem-pe-em-parceria-com-o-procon-pe-e-ministerio-publico-realiza-fiscalizacao-conjunta-em-postos-de-combustiveis/">Operação Abastecimento Seguro: Ipem-PE, em parceria com o Procon-PE e Ministério Público, realiza fiscalização conjunta em postos de combustíveis</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE), órgão delegado do Instituto Nacional de Metrologia, Qualidade e Tecnologia (Inmetro),</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/09/22/operacao-abastecimento-seguro-ipem-pe-em-parceria-com-o-procon-pe-e-ministerio-publico-realiza-fiscalizacao-conjunta-em-postos-de-combustiveis/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/09/DSC07797.jpg" alt="Operação Abastecimento Seguro: Ipem-PE, em parceria com o Procon-PE e Ministério Público, realiza fiscalização conjunta em postos de combustíveis" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/07/21/ipem-pe-convoca-taxistas-de-caruaru-para-verificacao-obrigatoria-de-taximetros-e-mudanca-de-tarifa/">Ipem-PE convoca taxistas de Caruaru para verificação obrigatória de taxímetros e mudança de tarifa</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) publicou no Diário Oficial do Estado, no dia 19 de julho,</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/07/21/ipem-pe-convoca-taxistas-de-caruaru-para-verificacao-obrigatoria-de-taximetros-e-mudanca-de-tarifa/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-18-at-10.33.00-3.jpeg" alt="Ipem-PE convoca taxistas de Caruaru para verificação obrigatória de taxímetros e mudança de tarifa" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/06/10/ipem-pe-convoca-taxistas-de-igarassu-para-verificacao-de-mudanca-de-tarifa/">IPEM-PE convoca taxistas de Igarassu para verificação de mudança de tarifa</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas do Estado de Pernambuco (IPEM-PE) publicou o Edital de convocação nº03/2025 convocando todos os</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/06/10/ipem-pe-convoca-taxistas-de-igarassu-para-verificacao-de-mudanca-de-tarifa/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2024/05/taxi_006.jpeg" alt="IPEM-PE convoca taxistas de Igarassu para verificação de mudança de tarifa" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/noticias/" rel="category"> Notícias </a></li><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2025/05/21/ipem-pe-convoca-taxistas-de-garanhuns-para-mudanca-obrigatoria-na-tarifa-dos-taximetros/">Ipem-PE convoca taxistas de Garanhuns para mudança obrigatória na tarifa dos taxímetros</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) publicou o Edital de Convocação nº 02/2025, convocando os proprietários de</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2025/05/21/ipem-pe-convoca-taxistas-de-garanhuns-para-mudanca-obrigatoria-na-tarifa-dos-taximetros/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2025/05/Taxi_004.jpeg" alt="Ipem-PE convoca taxistas de Garanhuns para mudança obrigatória na tarifa dos taxímetros" />
+							</a>
+		</div>
+	</div>
+</div> <div class="post-slides">
+	<div class="post-content-position">	
+		<!-- Content-left/right -->
+		<div class="post-content-left wp-medium-6 wpcolumns">
+			<div class="recentpost-inner-content">
+										<div class="recentpost-categories">		
+								<ul class="post-categories wppsac-post-categories"><li><a href="https://www.ipem.pe.gov.br/category/slide/" rel="category"> Slide </a></li></ul>							</div>
+											<h2 class="wp-post-title">
+						<a href="https://www.ipem.pe.gov.br/2024/04/23/mudanca-de-tarifa-taxis-recife/">Mudança de Tarifa Táxis Recife</a>
+					</h2>
+												
+						<div class="wp-post-content">
+														<div class="wp-sub-content">Confira aqui o edital de convocação para mudança de tarifa dos veículos táxi licenciados pela Prefeitura do Recife:
+
+EDITAL DE CONVOCAÇÃO</div>					
+														
+														
+						</div>
+									</div>
+		</div>
+		<div class="post-image-bg">
+			<a href="https://www.ipem.pe.gov.br/2024/04/23/mudanca-de-tarifa-taxis-recife/">
+								<img src="https://www.ipem.pe.gov.br/wp-content/uploads/2024/04/taxi_008.jpeg" alt="Mudança de Tarifa Táxis Recife" />
+							</a>
+		</div>
+	</div>
+</div>					</div>
+					<div class="wppsac-slider-conf wppsac-hide" data-conf="{&quot;dots&quot;:&quot;true&quot;,&quot;arrows&quot;:&quot;true&quot;,&quot;autoplay&quot;:&quot;true&quot;,&quot;autoplay_interval&quot;:&quot;3000&quot;,&quot;speed&quot;:&quot;500&quot;,&quot;rtl&quot;:&quot;false&quot;}"></div>
+				</div>
+		  
+</div>
+		</section>		</div>
+
+		<!-- <div class="widget_beside_slider">
+					</div> -->
+	</div>
+
+	<div class="main-content-section clearfix">
+		<div id="primary">
+			<div id="content" class="clearfix">
+
+				<section id="media_image-4" class="widget widget_media_image clearfix"><img width="3013" height="688" src="https://www.ipem.pe.gov.br/wp-content/uploads/2026/07/Assinatura-Período-Eleitoral.png" class="image wp-image-2179  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://www.ipem.pe.gov.br/wp-content/uploads/2026/07/Assinatura-Período-Eleitoral.png 3013w, https://www.ipem.pe.gov.br/wp-content/uploads/2026/07/Assinatura-Período-Eleitoral-300x69.png 300w, https://www.ipem.pe.gov.br/wp-content/uploads/2026/07/Assinatura-Período-Eleitoral-768x175.png 768w, https://www.ipem.pe.gov.br/wp-content/uploads/2026/07/Assinatura-Período-Eleitoral-1024x234.png 1024w" sizes="(max-width: 3013px) 100vw, 3013px" /></section>			</div>
+		</div>
+		
+<div id="secondary">
+			
+				<aside id="recent-posts-6" class="widget widget_recent_entries clearfix">		<h3 class="widget-title"><span>Posts recentes</span></h3>		<ul>
+											<li>
+					<a href="https://www.ipem.pe.gov.br/2026/05/22/ipem-pe-identifica-irregularidades-em-balancas-durante-fiscalizacao-no-aeroporto-dos-guararapes/">Ipem-PE identifica irregularidades em balanças durante fiscalização no Aeroporto dos Guararapes</a>
+									</li>
+											<li>
+					<a href="https://www.ipem.pe.gov.br/2025/12/17/ipem-pe-encontra-irregularidades-em-todos-os-bicos-de-combustivel-fiscalizados-em-posto-no-municipio-de-paulista/">Ipem-PE encontra irregularidades em todos os bicos de combustível fiscalizados em posto no município de Paulista</a>
+									</li>
+											<li>
+					<a href="https://www.ipem.pe.gov.br/2025/12/16/ipem-pe-apreende-21-balancas-irregulares-em-acao-de-fiscalizacao-no-municipio-de-ipojuca/">Ipem-PE apreende 21 balanças irregulares em ação de fiscalização no município de Ipojuca</a>
+									</li>
+					</ul>
+		</aside>
+	</div>	</div>
+
+
+</div><!-- .inner-wrap -->
+</div><!-- #main -->
+
+
+
+
+<footer id="colophon" class="clearfix ">
+	
+<div class="footer-widgets-wrapper">
+	<div class="inner-wrap">
+		<div class="footer-widgets-area clearfix">
+         <div class="tg-footer-main-widget">
+   			<div class="tg-first-footer-widget">
+   				<aside id="text-5" class="widget widget_text clearfix">			<div class="textwidget"><p>© 2026 – Instituto de Pesos e Medidas do Estado de Pernambuco (IPEM/PE)</p>
+<p>Avenida Professor Luiz Freire, nº 900 – Cidade Universitária<br />
+Recife – Pernambuco | CEP: 50740-545</p>
+<p>Telefone: (81) 3184-4700<br />
+CNPJ: 10.975.589/0001-05</p>
+<p>Horário de funcionamento:<br />
+Segunda a sexta-feira, das 8h às 14h, exceto feriados.</p>
+</div>
+		</aside>   			</div>
+         </div>
+         <div class="tg-footer-other-widgets">
+   			<div class="tg-second-footer-widget">
+   				   			</div>
+            <div class="tg-third-footer-widget">
+                           </div>
+            <div class="tg-fourth-footer-widget">
+                           </div>
+         </div>
+		</div>
+	</div>
+</div>	<div class="footer-socket-wrapper clearfix">
+		<div class="inner-wrap">
+			<div class="footer-socket-area">
+				<div class="footer-socket-right-section">
+							<div class="social-links clearfix">
+			<ul>
+				<li><a href="https://instagram.com/ipempe" target="_blank"><i class="fa fa-instagram"></i></a></li>			</ul>
+		</div><!-- .social-links -->
+						</div>
+
+				<div class="footer-socket-left-section">
+									</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+
+</div><!-- #page -->
+	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace( /everest-forms-no-js/, 'everest-forms-js' );
+		document.body.className = c;
+	</script>
+	<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/everest-forms/assets/js/inputmask/jquery.inputmask.bundle.js?ver=4.0.0-beta.58'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/everest-forms/assets/js/flatpickr/flatpickr.js?ver=4.5.1'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/everest-forms/assets/js/jquery-validate/jquery.validate.js?ver=1.17.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var everest_forms_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","everest_forms_data_save":"8ff39aa01a","i18n_messages_required":"Este campo \u00e9 obrigat\u00f3rio.","i18n_messages_url":"Please enter a valid URL.","i18n_messages_email":"Por favor, informe um email v\u00e1lido.","i18n_messages_number":"Please enter a valid number.","i18n_messages_recaptcha":"Invalid reCaptcha Code."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/everest-forms/assets/js/frontend/everest-forms.js?ver=1.2.4'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/jquery.bxslider.min.js?ver=4.2.10'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/colormag-slider-setting.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/navigation.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/news-ticker/jquery.newsTicker.min.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/news-ticker/ticker-setting.js?ver=20150304'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/sticky/jquery.sticky.js?ver=20150309'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/sticky/sticky-setting.js?ver=20150309'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/fitvids/jquery.fitvids.js?ver=20150311'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/themes/colormag/js/fitvids/fitvids-setting.js?ver=20150311'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/youtube-embed-plus/scripts/fitvids.js?ver=12.0.1'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-includes/js/wp-embed.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/wp-responsive-recent-post-slider/assets/js/slick.min.js?ver=1.4.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Wppsac = {"is_mobile":"0","is_rtl":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.ipem.pe.gov.br/wp-content/plugins/wp-responsive-recent-post-slider/assets/js/wppsac-public.js?ver=1.4.4'></script>
+</body>
+</html>

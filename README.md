@@ -1,38 +1,42 @@
-# IPEM-PE — Next.js para execução local
+# IPEM-PE — portal Next.js para homologação
 
-## Requisitos
-- Node.js LTS compatível com a versão do Next.js instalada
-- npm
-- Acesso à internet na primeira instalação de dependências
-- O build de `next/font/google` pode precisar acessar o Google Fonts; se a rede local bloquear isso, configurar fonte Inter local licenciada.
+Esta versão usa como referência o HTML da página inicial atual fornecido para reconstruir a estrutura do portal em Next.js. Não modifica WordPress nem qualquer ambiente de produção.
 
-## Iniciar no Windows
-1. Extraia o ZIP para uma pasta de trabalho.
-2. Abra PowerShell ou Terminal dentro dessa pasta.
-3. Execute:
+## Executar localmente no Windows
+
+Requer uma versão LTS do Node.js e npm.
 
 ```powershell
-node --version
-npm --version
 npm install
 npm run dev
 ```
 
-4. Abra `http://127.0.0.1:3000`.
+Abra `http://localhost:3000`.
 
-Para parar o servidor, pressione `Ctrl+C` no terminal.
+## Validar antes da homologação
 
-## Verificação
 ```powershell
 npm run typecheck
 npm run lint
 npm run build
 ```
 
-## Atenção à biblioteca UI Gov PE
-A instalação usa inicialmente as versões `latest` de `@uigovpe/components` e `@uigovpe/styles`. Antes de considerar o projeto homologável, conferir versões publicadas, peer dependencies e API da documentação oficial. O layout atual importa os estilos; ainda não utiliza todos os componentes oficiais nem configura `UiProvider`/`LayoutProvider`.
+Os links para notícias, serviços, legislação e transparência apontam para páginas do portal atual. O conteúdo textual disponível foi derivado do HTML fornecido; páginas completas não foram migradas quando o arquivo só continha o HTML da Home.
 
-Se `npm install` ou `npm run build` falhar por incompatibilidade dos pacotes, guardar a mensagem completa do erro para ajustar as versões e a integração. Não remover os pacotes oficiais sem decisão técnica.
+## Estrutura
 
-## Segurança
-Este projeto é local e não altera o WordPress ou o site de produção. Não adicionar senhas, tokens, dados pessoais ou arquivos internos no repositório.
+- `src/app/page.tsx`: Home reconstruída.
+- `src/components/SiteHeader.tsx`: cabeçalho e menu responsivo.
+- `src/components/SiteFooter.tsx`: rodapé.
+- `src/data/news.ts`: notícias e imagens referenciadas no HTML de origem.
+- `src/app/servicos`, `transparencia`, `noticias`, `contato`: páginas internas iniciais.
+
+## Observações importantes
+
+- O layout foi reconstruído com CSS responsivo e estrutura semântica. A integração final com `UiProvider`, `LayoutProvider` e componentes do Padrão Digital PE ainda precisa ser validada contra as versões instaladas dos pacotes oficiais.
+- As imagens das notícias são carregadas dos URLs do portal atual; para produção, é preferível baixar e organizar os arquivos de mídia autorizados dentro do projeto.
+- Endereço, telefone e horário foram reproduzidos do HTML fornecido e precisam de validação institucional.
+- O HTML de origem menciona uma imagem de assinatura de período eleitoral, mas não inclui o arquivo binário; a página deixa um aviso para validação em vez de inventar ou reconstruir a peça.
+- O conteúdo foi limitado ao que aparece na Home fornecida. Não foram inventados textos de História, Quem Somos, Organograma ou outros conteúdos que exigem o HTML das páginas correspondentes.
+- O pacote contém dependências com versão `latest`. Para homologação estável, recomenda-se instalar, testar e fixar versões compatíveis antes de publicar.
+- Este projeto não foi executado nem compilado neste ambiente; rode os comandos de validação localmente e compartilhe qualquer erro do terminal.
