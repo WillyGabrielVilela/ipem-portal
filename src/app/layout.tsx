@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@uigovpe/styles";
 import "./globals.css";
+import GovernmentBar from "@/components/GovernmentBar";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="pt-BR">
       <body className={inter.variable}>
         <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
+        <GovernmentBar />
         <SiteHeader />
         {children}
         <SiteFooter />

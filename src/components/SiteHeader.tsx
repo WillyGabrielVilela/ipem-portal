@@ -39,7 +39,6 @@ const menus = [
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   return <>
-    <div className="government-strip"><div className="container gov-inner"><span>Governo de Pernambuco</span><a href="https://instagram.com/ipempe" target="_blank" rel="noreferrer">Instagram do IPEM-PE ↗</a></div></div>
     <header className="site-header">
       <div className="container brand-row">
         <a className="brand" href="/" aria-label="IPEM-PE - página inicial">
