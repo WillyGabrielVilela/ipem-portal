@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const menus = [
   { label: "Institucional", items: [
-    ["História", "https://www.ipem.pe.gov.br/historia/"],
-    ["Quem Somos", "https://www.ipem.pe.gov.br/quem-somos/"],
-    ["Quem é Quem", "https://www.ipem.pe.gov.br/diretoria/"],
+    ["História", "/historia"],
+    ["Quem Somos", "/quem-somos"],
+    ["Quem é Quem", "/diretoria"],
     ["Organograma", "https://www.ipem.pe.gov.br/organograma/"],
     ["Unidades", "https://www.ipem.pe.gov.br/unidades/"],
   ]},

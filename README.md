@@ -65,3 +65,18 @@ precisam ser validados; não há armazenamento de consentimento implementado.
 `InputCurrency`, `InputFile`, `InputMasked`, `InputNumber`, `InputPassword`, `InputSwitch`, `InputText`, `InputTextarea`, `MultiSelect`, `RadioButton`, `Stepper`, `TabView`, `Table`, `Paginator`, `Filter` e `Toast` não foram inseridos artificialmente: as páginas atuais não possuem formulário, fluxo por etapas, tabela de dados ou operação que justifique esses controles. `Dropdown` e `Menu` também não substituíram a navegação existente porque a API detalhada do Storybook não pôde ser consultada nesta sessão; a navegação atual permanece funcional. A busca oficial (`Search`) deve ser integrada após validar suas propriedades e o comportamento esperado na documentação. `Tooltip` também ficou de fora porque não há, neste momento, um controle cuja informação essencial dependa de dica flutuante.
 
 As integrações adicionais precisam ser verificadas com `npm install`, `npm run typecheck`, `npm run lint` e `npm run build`, usando a versão instalada de `@uigovpe/components`.
+
+
+## Página História
+
+A rota `/historia` foi criada a partir do conteúdo da página História do WordPress fornecido no arquivo de referência. A apresentação usa os wrappers de componentes oficiais já demonstrados (`Card`, `Tag`, `Divider`, `Message` e `Button`). O texto não foi tratado como historicamente verificado: o aviso na página recomenda validação institucional antes da publicação. A página pode ser acessada em `http://localhost:3000/historia` durante a execução local.
+
+
+## Página Quem é quem
+
+Foi adicionada a rota local `/diretoria`, com os quatro registros de gestão e os contatos que constam no HTML fornecido. Os dados pessoais institucionais, cargos, telefones e e-mails precisam de confirmação da área responsável antes de publicação. A opção “Quem é Quem” no menu principal aponta para a rota local.
+
+
+## Página Quem Somos
+
+Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página organiza o perfil institucional, missão, visão, competências descritas no material e a citação final. O conteúdo foi preservado em essência, sem validação jurídica independente; o vínculo administrativo, a legislação, as atribuições e os textos estratégicos devem ser confirmados pela equipe responsável antes da publicação. O item “Quem Somos” no menu principal agora aponta para a rota local.

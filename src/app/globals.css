@@ -177,3 +177,83 @@ img { display: block; max-width: 100%; }
 .news-list-label { display: flex; align-items: center; margin: 1rem 0; }
 .hero-tag { display: inline-flex; margin-bottom: .45rem; }
 .hero-tag > * { font-size: .78rem; }
+
+
+/* Página História — organizada com os componentes oficiais do Design System PE */
+.history-page { padding-top: 42px; padding-bottom: 64px; }
+.history-heading { max-width: 860px; margin-bottom: 28px; }
+.history-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.history-heading > p:not(.eyebrow) { color: var(--pe-muted); }
+.history-section { padding: 30px 0; }
+.history-section-heading { max-width: 850px; margin-bottom: 22px; }
+.history-section-heading h2 { margin: 12px 0 8px; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.25; }
+.history-section-heading p { color: var(--pe-muted); margin: 0; }
+.history-timeline { display: grid; gap: 18px; position: relative; }
+.history-timeline-item { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 18px; align-items: start; }
+.history-year { color: var(--pe-blue); font-size: 1.2rem; font-weight: 800; padding-top: 20px; }
+.history-timeline-item p, .history-section p { line-height: 1.75; }
+.history-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.history-next-steps { padding-top: 26px; }
+.history-next-steps h2 { margin-bottom: 8px; }
+.history-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.history-page .site-message { margin: 20px 0 10px; }
+@media (max-width: 680px) {
+  .history-page { padding-top: 28px; }
+  .history-timeline-item { grid-template-columns: 1fr; gap: 4px; }
+  .history-year { padding-top: 0; }
+  .history-card-grid { grid-template-columns: 1fr; }
+  .history-actions { align-items: stretch; flex-direction: column; }
+  .history-actions > * { width: 100%; }
+}
+
+
+/* Página institucional: Quem é quem */
+.directory-page { padding-top: 42px; padding-bottom: 64px; }
+.directory-heading { max-width: 860px; margin-bottom: 28px; }
+.directory-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.directory-heading > p:not(.eyebrow) { color: var(--pe-muted); }
+.directory-page .site-message { margin: 20px 0 28px; }
+.directory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.directory-entry { min-width: 0; }
+.directory-person-heading { margin-bottom: 14px; }
+.directory-role { min-height: 2.5em; font-weight: 650; line-height: 1.55; }
+.directory-contact-list { display: grid; gap: 14px; margin: 0; }
+.directory-contact-list > div { display: grid; grid-template-columns: 95px minmax(0, 1fr); gap: 12px; }
+.directory-contact-list dt { font-weight: 700; }
+.directory-contact-list dd { margin: 0; overflow-wrap: anywhere; }
+.directory-contact-list a { color: var(--pe-blue); text-decoration: underline; text-underline-offset: 3px; }
+.directory-next-steps { padding-top: 26px; }
+.directory-next-steps h2 { margin-bottom: 8px; }
+.directory-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+@media (max-width: 720px) {
+  .directory-page { padding-top: 28px; }
+  .directory-grid { grid-template-columns: 1fr; }
+  .directory-actions { align-items: stretch; flex-direction: column; }
+  .directory-actions > * { width: 100%; }
+  .directory-contact-list > div { grid-template-columns: 1fr; gap: 4px; }
+}
+
+
+/* Página institucional: Quem Somos */
+.about-page { padding-top: 42px; padding-bottom: 64px; }
+.about-heading { max-width: 900px; margin-bottom: 26px; }
+.about-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.about-heading > p:not(.eyebrow) { color: var(--pe-muted); }
+.about-overview { margin: 24px 0 30px; max-width: 1000px; }
+.about-page p { line-height: 1.75; }
+.about-page .site-card-shell p:first-child { margin-top: 0; }
+.about-page .site-card-shell p:last-child { margin-bottom: 0; }
+.about-section { padding: 30px 0; }
+.about-section-heading { max-width: 850px; margin-bottom: 22px; }
+.about-section-heading h2, .about-practice h2 { margin: 12px 0 8px; font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.25; }
+.about-section-heading p { color: var(--pe-muted); margin: 0; }
+.about-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.about-subheading { margin: 22px 0 14px; font-size: 1.2rem; }
+.about-cooperation { margin-top: 20px; }
+.about-note { color: var(--pe-muted); font-size: .9rem; margin-top: 14px; }
+.about-practice { padding: 30px 0; max-width: 1000px; }
+.about-practice blockquote { margin: 18px 0 0; padding: 22px 26px; border-left: 4px solid var(--pe-blue); background: var(--brand-soft, #e8f2f8); border-radius: 0 var(--pe-radius) var(--pe-radius) 0; font-size: 1.1rem; line-height: 1.8; }
+.about-next-steps { padding-top: 26px; }
+.about-next-steps h2 { margin-bottom: 8px; }
+.about-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+@media (max-width: 720px) { .about-page { padding-top: 28px; } .about-card-grid { grid-template-columns: 1fr; } .about-actions { align-items: stretch; flex-direction: column; } .about-actions > * { width: 100%; } .about-practice blockquote { padding: 18px; } }
