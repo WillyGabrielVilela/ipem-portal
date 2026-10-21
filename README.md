@@ -88,3 +88,7 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - Conteúdo organizado a partir do HTML de referência fornecido, com aviso de validação institucional.
 
 - `/cqi`: página de Qualidade Industrial baseada no HTML de referência enviado; confirmar dados técnicos e competências com a área responsável antes de publicar.
+
+## Legislação
+- `/normas-tecnicas`: página de legislação federal e normas do Inmetro, com links oficiais para as Leis nº 9.933/1999 e nº 5.966/1973, o sistema Legislação Inmetro, legislação metrológica vigente e produtos/serviços regulados.
+- Confirmar periodicamente os links e validar com a área responsável qualquer lista de normas antes da publicação institucional.

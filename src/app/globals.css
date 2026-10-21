@@ -362,3 +362,26 @@ img { display: block; max-width: 100%; }
 .cqi-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
 @media (max-width: 900px) { .cqi-grid { grid-template-columns: 1fr; } }
 @media (max-width: 680px) { .cqi-page { padding-top: 28px; } .cqi-impact { grid-template-columns: 1fr; padding: 20px; } .cqi-actions { flex-direction: column; align-items: stretch; } .cqi-actions > * { width: 100%; } }
+
+
+/* Legislação Federal e Normas do Inmetro */
+.legislation-page { padding-top: 42px; padding-bottom: 64px; }
+.legislation-heading { max-width: 960px; margin-bottom: 28px; }
+.legislation-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.legislation-heading > p:not(.eyebrow) { color: var(--pe-muted); line-height: 1.75; }
+.legislation-page .site-message { margin: 20px 0 30px; }
+.legislation-section { padding: 24px 0 30px; }
+.legislation-section-heading { max-width: 940px; margin-bottom: 22px; }
+.legislation-section-heading h2, .legislation-help h2 { margin: 12px 0 8px; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.legislation-section-heading p { color: var(--pe-muted); line-height: 1.7; }
+.legislation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.legislation-grid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+.legislation-page .site-card-shell p { line-height: 1.75; }
+.legislation-link { display: inline-flex; gap: 7px; align-items: center; margin-top: 10px; color: var(--pe-blue, #005a9c); font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+.legislation-help { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 22px; align-items: start; margin: 30px 0; padding: 28px; border: 1px solid var(--pe-border, #d8e1e8); border-radius: var(--pe-radius, 12px); background: var(--brand-soft, #f1f7fb); }
+.legislation-help-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--pe-blue, #005a9c); color: #fff; font-size: 2.1rem; font-weight: 800; }
+.legislation-help ol { padding-left: 1.25rem; line-height: 1.8; }
+.legislation-help p { line-height: 1.75; }
+.legislation-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+@media (max-width: 800px) { .legislation-grid { grid-template-columns: 1fr; } .legislation-grid > :last-child:nth-child(odd) { grid-column: auto; } }
+@media (max-width: 680px) { .legislation-page { padding-top: 28px; } .legislation-help { grid-template-columns: 1fr; padding: 20px; } .legislation-actions { flex-direction: column; align-items: stretch; } .legislation-actions > * { width: 100%; } }
