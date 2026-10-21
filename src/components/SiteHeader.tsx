@@ -11,8 +11,8 @@ const menus = [
     ["Unidades", "/unidades"],
   ]},
   { label: "Atividades", items: [
-    ["CML", "https://www.ipem.pe.gov.br/cml/"],
-    ["Pré Embalados", "https://www.ipem.pe.gov.br/pre-medidos/"],
+    ["CML", "/cml"],
+    ["Pré-Embalados", "/pre-medidos"],
     ["CQI", "https://www.ipem.pe.gov.br/cqi/"],
   ]},
   { label: "Notícias", href: "/noticias", items: [["Todas as notícias", "https://www.ipem.pe.gov.br/category/noticias/"]]},

@@ -80,3 +80,9 @@ Foi adicionada a rota local `/diretoria`, com os quatro registros de gestão e o
 ## Página Quem Somos
 
 Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página organiza o perfil institucional, missão, visão, competências descritas no material e a citação final. O conteúdo foi preservado em essência, sem validação jurídica independente; o vínculo administrativo, a legislação, as atribuições e os textos estratégicos devem ser confirmados pela equipe responsável antes da publicação. O item “Quem Somos” no menu principal agora aponta para a rota local.
+
+
+### Página Pré-Embalados
+
+- Rota local: `/pre-medidos`.
+- Conteúdo organizado a partir do HTML de referência fornecido, com aviso de validação institucional.

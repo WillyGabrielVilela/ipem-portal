@@ -287,3 +287,54 @@ img { display: block; max-width: 100%; }
   .units-actions { align-items: stretch; flex-direction: column; }
   .units-actions > * { width: 100%; }
 }
+
+/* Atividades: Coordenadoria de Metrologia Legal (CML) */
+.cml-page { padding-top: 42px; padding-bottom: 64px; }
+.cml-heading { max-width: 940px; margin-bottom: 28px; }
+.cml-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.cml-heading > p:not(.eyebrow) { color: var(--pe-muted); line-height: 1.75; }
+.cml-page .site-message { margin: 20px 0 30px; }
+.cml-purpose, .cml-section { padding: 24px 0 30px; }
+.cml-section-heading { max-width: 900px; margin-bottom: 22px; }
+.cml-section-heading h2, .cml-seal h2, .cml-next-steps h2 { margin: 12px 0 8px; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.cml-section-heading p { color: var(--pe-muted); line-height: 1.7; margin-bottom: 0; }
+.cml-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.cml-card-grid-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cml-page .site-card-shell p { line-height: 1.75; }
+.cml-page .site-card-shell h3 { margin: 20px 0 10px; font-size: 1.05rem; }
+.cml-list { padding-left: 1.25rem; line-height: 1.8; }
+.cml-list li + li { margin-top: 4px; }
+.cml-seal { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 22px; align-items: start; margin: 30px 0; padding: 28px; border: 1px solid var(--pe-border, #d8e1e8); border-radius: var(--pe-radius, 12px); background: var(--brand-soft, #f1f7fb); }
+.cml-seal-symbol { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--pe-blue, #005a9c); color: #fff; font-size: 2.1rem; font-weight: 800; }
+.cml-seal p { line-height: 1.75; }
+.cml-next-steps { padding-top: 20px; }
+.cml-next-steps > p { color: var(--pe-muted); }
+.cml-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+@media (max-width: 800px) { .cml-card-grid, .cml-card-grid-two { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .cml-page { padding-top: 28px; } .cml-seal { grid-template-columns: 1fr; padding: 20px; } .cml-actions { flex-direction: column; align-items: stretch; } .cml-actions > * { width: 100%; } }
+
+
+/* Página institucional: Pré-Embalados */
+.prem-page { padding-top: 42px; padding-bottom: 64px; }
+.prem-heading { max-width: 940px; margin-bottom: 28px; }
+.prem-heading h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.prem-heading > p:not(.eyebrow) { color: var(--pe-muted); line-height: 1.75; }
+.prem-page .site-message { margin: 20px 0 30px; }
+.prem-section { padding: 24px 0 30px; }
+.prem-section-heading { max-width: 940px; margin-bottom: 22px; }
+.prem-section-heading h2, .prem-contact h2, .prem-next-steps h2 { margin: 12px 0 8px; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.prem-section-heading p, .prem-next-steps > p { color: var(--pe-muted); line-height: 1.7; }
+.prem-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.prem-grid-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.prem-page .site-card-shell p { line-height: 1.75; }
+.prem-list { padding-left: 1.25rem; line-height: 1.8; }
+.prem-list li + li { margin-top: 6px; }
+.prem-contact { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 22px; align-items: start; margin: 30px 0; padding: 28px; border: 1px solid var(--pe-border, #d8e1e8); border-radius: var(--pe-radius, 12px); background: var(--brand-soft, #f1f7fb); }
+.prem-contact-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--pe-blue, #005a9c); color: #fff; font-size: 2rem; font-weight: 800; }
+.prem-contact-list { margin-top: 16px; }
+.prem-contact a { text-decoration: underline; text-underline-offset: 3px; }
+.prem-reminder { margin-top: 20px; line-height: 1.75; }
+.prem-next-steps { padding-top: 20px; }
+.prem-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+@media (max-width: 800px) { .prem-grid, .prem-grid-two { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .prem-page { padding-top: 28px; } .prem-contact { grid-template-columns: 1fr; padding: 20px; } .prem-actions { flex-direction: column; align-items: stretch; } .prem-actions > * { width: 100%; } }
