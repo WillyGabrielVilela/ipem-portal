@@ -8,7 +8,7 @@ const menus = [
     ["Quem Somos", "/quem-somos"],
     ["Quem é Quem", "/diretoria"],
     ["Organograma", "https://www.ipem.pe.gov.br/organograma/"],
-    ["Unidades", "https://www.ipem.pe.gov.br/unidades/"],
+    ["Unidades", "/unidades"],
   ]},
   { label: "Atividades", items: [
     ["CML", "https://www.ipem.pe.gov.br/cml/"],
