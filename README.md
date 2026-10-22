@@ -91,4 +91,12 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 
 ## Legislação
 - `/normas-tecnicas`: página de legislação federal e normas do Inmetro, com links oficiais para as Leis nº 9.933/1999 e nº 5.966/1973, o sistema Legislação Inmetro, legislação metrológica vigente e produtos/serviços regulados.
+- `/lei-geral-de-protecao-de-dados-pessoais-lgpd`: página sobre LGPD, contato da pessoa encarregada conforme conteúdo de referência, direitos dos titulares e links para Fala.BR e para o texto legal no Planalto. Confirmar dados de contato e fluxo oficial de solicitações antes de publicar.
 - Confirmar periodicamente os links e validar com a área responsável qualquer lista de normas antes da publicação institucional.
+
+
+## Área Principal da Transparência
+- Rota local: `/transparencia/area-principal`.
+- Conteúdo organizado a partir do HTML fornecido: identidade institucional, missão e visão, estrutura, competências, legislação citada, integridade, endereços e contatos, LGPD, Ouvidoria, redes sociais, atalhos do Portal da Transparência e mapas de contratos em CSV.
+- Os textos e dados foram preservados em essência e não foram verificados juridicamente ou operacionalmente. Validar com as áreas responsáveis as informações administrativas, os contatos, a vigência das normas, as afirmações sobre vínculos/conselhos e a atualização dos documentos antes de publicar.
+- Os atalhos gráficos sem destino ou identificação textual clara no HTML original não foram recriados como links independentes; os links explícitos foram reorganizados em cartões acessíveis.

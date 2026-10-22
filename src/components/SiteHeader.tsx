@@ -18,8 +18,8 @@ const menus = [
   { label: "Notícias", href: "/noticias", items: [["Todas as notícias", "https://www.ipem.pe.gov.br/category/noticias/"]]},
   { label: "Legislação", items: [["Legislação Federal e Normas do Inmetro", "/normas-tecnicas"]]},
   { label: "Transparência", href: "/transparencia", items: [
-    ["Área Principal da Transparência", "https://www.ipem.pe.gov.br/area-principal-da-transparencia-2/"],
-    ["LGPD", "https://www.ipem.pe.gov.br/lei-geral-de-protecao-de-dados-pessoais-lgpd/"],
+    ["Área Principal da Transparência", "/transparencia/area-principal"],
+    ["LGPD", "/lei-geral-de-protecao-de-dados-pessoais-lgpd"],
     ["Plano de Metas", "https://www.ipem.pe.gov.br/plano-de-metas/"],
     ["Editais e Portarias", "https://www.ipem.pe.gov.br/editais-e-portarias/"],
     ["Notificações de Autuação", "https://www.ipem.pe.gov.br/notificacao-de-atuacao/"],
