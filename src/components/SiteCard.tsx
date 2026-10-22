@@ -27,7 +27,7 @@ export default function SiteCard({
     <div className={`site-card-shell ${className}`.trim()}>
       <Card
         title={title}
-        subtitle={subtitle}
+        // subtitle={subtitle}
         header={header}
         footer={footer}
         elevation={elevation}
