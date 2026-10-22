@@ -154,3 +154,19 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 ### Perguntas Frequentes — imagens demonstrativas
 
 A página `/perguntas-frequentes` exibe as imagens referenciadas no HTML legado nas respostas sobre balanças, bombas de combustível e identificação/certificação de produtos. As imagens são carregadas dos endereços externos de origem e podem depender da disponibilidade desses servidores; validar direitos de uso, créditos, acessibilidade e disponibilidade antes de publicar.
+
+### Atendimento — Portal de Serviços ao Cliente / Cidadão
+
+- Rota local: `/portal-de-servicos`.
+- Apresenta as três categorias destacadas no HTML de referência: Guias (GRU), instrumentos de medição e oficinas credenciadas.
+- O botão principal encaminha ao PSIE do Inmetro (`https://psie.inmetro.gov.br/`) em nova aba.
+- O menu Atendimento aponta para a nova rota local. A página não emite guias nem realiza consultas por conta própria; os serviços efetivos são oferecidos pelo portal externo.
+- Validar com a área responsável se o PSIE permanece como destino institucional correto e se as categorias/descrições refletem os serviços atualmente disponíveis antes da publicação.
+
+
+### Atendimento — Departamento Jurídico
+
+- Rota local: `/departamento-juridico`.
+- Apresenta endereço, telefones e e-mail de contato transcritos do HTML de referência, com links para mapa, ligação telefônica e envio de e-mail.
+- O item “Departamento Jurídico” do menu Atendimento aponta para a rota local.
+- Confirmar com a área responsável se os canais permanecem atualizados e validar os procedimentos oficiais de atendimento antes da publicação. A página não acrescenta orientações jurídicas ou prazos não presentes na fonte.

@@ -30,8 +30,8 @@ const menus = [
   ]},
   { label: "Atendimento", items: [
     ["Perguntas Frequentes", "/perguntas-frequentes"],
-    ["Portal de Serviços ao Cliente / Cidadão", "https://servicos.rbmlq.gov.br/segundaviagru/"],
-    ["Departamento Jurídico", "https://www.ipem.pe.gov.br/juridico/"],
+    ["Portal de Serviços ao Cliente / Cidadão", "/portal-de-servicos"],
+    ["Departamento Jurídico", "/departamento-juridico"],
   ]},
   { label: "Ouvidoria", items: [["Formulário de denúncia", "https://www.ipem.pe.gov.br/formulario-de-denuncia/"]]},
 ];
