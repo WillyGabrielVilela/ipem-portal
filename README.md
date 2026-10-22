@@ -142,3 +142,15 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - Rota local: `/convenios-e-transferencias`.
 - Reúne os sete links de convênios/termos aditivos presentes no HTML de referência, preservando as URLs de origem.
 - Alguns itens de termo aditivo têm títulos repetidos no site antigo; a página identifica as referências de arquivo separadamente e recomenda validar os destinos antes de publicar.
+
+
+### Atendimento — Perguntas Frequentes
+
+- Rota local: `/perguntas-frequentes`.
+- Implementada como lista acessível de perguntas expansíveis usando HTML nativo (`details`/`summary`), com layout responsivo.
+- O menu Atendimento aponta para a rota local; os links de denúncia e do portal de serviços abrem os canais institucionais externos.
+- As respostas foram adaptadas a partir do HTML legado enviado, com redação cautelosa em pontos que exigem confirmação técnica. A página contém um aviso de validação editorial antes da publicação.
+
+### Perguntas Frequentes — imagens demonstrativas
+
+A página `/perguntas-frequentes` exibe as imagens referenciadas no HTML legado nas respostas sobre balanças, bombas de combustível e identificação/certificação de produtos. As imagens são carregadas dos endereços externos de origem e podem depender da disponibilidade desses servidores; validar direitos de uso, créditos, acessibilidade e disponibilidade antes de publicar.

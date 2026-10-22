@@ -29,7 +29,7 @@ const menus = [
     ["Seleção Pública Simplificada", "https://www.ipem.pe.gov.br/selecao-publica-simplificada/"],
   ]},
   { label: "Atendimento", items: [
-    ["Perguntas Frequentes", "https://www.ipem.pe.gov.br/perguntas-frequentes/"],
+    ["Perguntas Frequentes", "/perguntas-frequentes"],
     ["Portal de Serviços ao Cliente / Cidadão", "https://servicos.rbmlq.gov.br/segundaviagru/"],
     ["Departamento Jurídico", "https://www.ipem.pe.gov.br/juridico/"],
   ]},
