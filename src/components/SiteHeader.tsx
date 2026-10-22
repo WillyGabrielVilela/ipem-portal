@@ -33,7 +33,7 @@ const menus = [
     ["Portal de Serviços ao Cliente / Cidadão", "/portal-de-servicos"],
     ["Departamento Jurídico", "/departamento-juridico"],
   ]},
-  { label: "Ouvidoria", items: [["Formulário de denúncia", "https://www.ipem.pe.gov.br/formulario-de-denuncia/"]]},
+  { label: "Ouvidoria", items: [["Ouvidoria", "/ouvidoria"]]},
 ];
 
 export default function SiteHeader() {

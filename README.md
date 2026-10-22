@@ -170,3 +170,11 @@ A página `/perguntas-frequentes` exibe as imagens referenciadas no HTML legado 
 - Apresenta endereço, telefones e e-mail de contato transcritos do HTML de referência, com links para mapa, ligação telefônica e envio de e-mail.
 - O item “Departamento Jurídico” do menu Atendimento aponta para a rota local.
 - Confirmar com a área responsável se os canais permanecem atualizados e validar os procedimentos oficiais de atendimento antes da publicação. A página não acrescenta orientações jurídicas ou prazos não presentes na fonte.
+
+
+### Atendimento — Ouvidoria
+
+- Rota local: `/ouvidoria`.
+- Reúne os canais Ouve.PE e Fala.BR, os contatos diretos transcritos da referência, links de legislação e tabela de relatórios de 2021 a 2025.
+- O item Ouvidoria do menu principal agora aponta para a página local. Os sistemas de manifestação e os PDFs continuam em endereços externos.
+- A página não recebe nem protocola manifestações diretamente. Confirmar com a Ouvidoria a atualidade dos contatos, plataformas, procedimento presencial, classificação dos relatórios e disponibilidade dos arquivos antes da publicação.
