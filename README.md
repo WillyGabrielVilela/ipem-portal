@@ -100,3 +100,10 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - Conteúdo organizado a partir do HTML fornecido: identidade institucional, missão e visão, estrutura, competências, legislação citada, integridade, endereços e contatos, LGPD, Ouvidoria, redes sociais, atalhos do Portal da Transparência e mapas de contratos em CSV.
 - Os textos e dados foram preservados em essência e não foram verificados juridicamente ou operacionalmente. Validar com as áreas responsáveis as informações administrativas, os contatos, a vigência das normas, as afirmações sobre vínculos/conselhos e a atualização dos documentos antes de publicar.
 - Os atalhos gráficos sem destino ou identificação textual clara no HTML original não foram recriados como links independentes; os links explícitos foram reorganizados em cartões acessíveis.
+
+
+## Página Plano de Metas
+- Rota local: `/plano-de-metas`.
+- Organiza os cinco links listados no HTML de referência: três planilhas (2025 e 2024) e duas páginas institucionais com planos de 2023/períodos avaliativos informados na origem.
+- O item “Plano de Metas” do menu Transparência aponta para a nova rota local.
+- A fonte fornecida não lista documento de 2026; confirmar a existência de documentos mais recentes e testar os links antes da publicação. Os arquivos e períodos foram organizados sem validar seu conteúdo ou situação atual.

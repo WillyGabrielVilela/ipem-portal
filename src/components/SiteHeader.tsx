@@ -20,7 +20,7 @@ const menus = [
   { label: "Transparência", href: "/transparencia", items: [
     ["Área Principal da Transparência", "/transparencia/area-principal"],
     ["LGPD", "/lei-geral-de-protecao-de-dados-pessoais-lgpd"],
-    ["Plano de Metas", "https://www.ipem.pe.gov.br/plano-de-metas/"],
+    ["Plano de Metas", "/plano-de-metas"],
     ["Editais e Portarias", "https://www.ipem.pe.gov.br/editais-e-portarias/"],
     ["Notificações de Autuação", "https://www.ipem.pe.gov.br/notificacao-de-atuacao/"],
     ["Licitações e Contratos", "https://www.ipem.pe.gov.br/licitacao/"],
