@@ -24,7 +24,7 @@ const menus = [
     ["Editais e Portarias", "/editais-e-portarias"],
     ["Notificações de Autuação", "/notificacao-de-atuacao"],
     ["Licitações e Contratos", "/licitacao"],
-    ["Despesas", "https://www.ipem.pe.gov.br/despesas/"],
+    ["Despesas", "/despesas"],
     ["Convênios e Transferências", "https://www.ipem.pe.gov.br/convenios-e-transferencias/"],
     ["Seleção Pública Simplificada", "https://www.ipem.pe.gov.br/selecao-publica-simplificada/"],
   ]},

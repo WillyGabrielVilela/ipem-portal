@@ -128,3 +128,10 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - A página apresenta o acesso ao Portal da Transparência de Pernambuco, os links indicados para PE-Integrado e e-Fisco e o aviso de intenção de contratar com documento de referência SEI_90640426_GOVPE — Anexo 10/2026.
 - O item “Licitações e Contratos” do menu Transparência aponta para a rota local.
 - Conteúdo transcrito e organizado a partir do HTML fornecido; validar atualização do aviso, documento e links com a área responsável antes da publicação.
+
+
+## Despesas
+- Rota local: `/despesas`.
+- Organiza os sete relatórios mensais de janeiro a julho de 2026 listados no HTML de referência e mantém o acesso à página “Despesas Realizadas PE”.
+- O item “Despesas” no menu Transparência aponta para a nova rota local.
+- Os links foram preservados conforme fornecidos; confirmar a disponibilidade dos PDFs, o período de referência e a atualização das informações antes da publicação.
