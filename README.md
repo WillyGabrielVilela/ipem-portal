@@ -135,3 +135,10 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - Organiza os sete relatórios mensais de janeiro a julho de 2026 listados no HTML de referência e mantém o acesso à página “Despesas Realizadas PE”.
 - O item “Despesas” no menu Transparência aponta para a nova rota local.
 - Os links foram preservados conforme fornecidos; confirmar a disponibilidade dos PDFs, o período de referência e a atualização das informações antes da publicação.
+
+
+### Convênios e Transferências
+
+- Rota local: `/convenios-e-transferencias`.
+- Reúne os sete links de convênios/termos aditivos presentes no HTML de referência, preservando as URLs de origem.
+- Alguns itens de termo aditivo têm títulos repetidos no site antigo; a página identifica as referências de arquivo separadamente e recomenda validar os destinos antes de publicar.

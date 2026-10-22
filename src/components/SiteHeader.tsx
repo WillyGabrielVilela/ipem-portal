@@ -25,7 +25,7 @@ const menus = [
     ["Notificações de Autuação", "/notificacao-de-atuacao"],
     ["Licitações e Contratos", "/licitacao"],
     ["Despesas", "/despesas"],
-    ["Convênios e Transferências", "https://www.ipem.pe.gov.br/convenios-e-transferencias/"],
+    ["Convênios e Transferências", "/convenios-e-transferencias"],
     ["Seleção Pública Simplificada", "https://www.ipem.pe.gov.br/selecao-publica-simplificada/"],
   ]},
   { label: "Atendimento", items: [
