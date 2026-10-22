@@ -114,3 +114,17 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - Organiza os 34 documentos listados no HTML de referência em 2026, 2025 e anos anteriores. Mantém os títulos e destinos informados na origem.
 - O item “Editais e Portarias” no menu Transparência aponta para a nova rota local.
 - A fonte apresenta alguns possíveis desencontros entre os números indicados nos títulos e os nomes dos arquivos; validar os documentos e todos os links com a área responsável antes de publicar.
+
+
+## Editais de Notificação de Autuação
+- Rota local: `/notificacao-de-atuacao`.
+- Organiza os cinco editais listados no HTML de referência, referentes a 2026, 2025 e 2024.
+- O item “Notificações de Autuação” no menu Transparência aponta para a nova rota local.
+- Os endereços originais foram preservados, inclusive os links HTTP e as páginas institucionais intermediárias. Confirmar disponibilidade, segurança e correspondência dos arquivos com os títulos antes de publicar.
+
+
+## Licitações e Contratos
+- Rota local: `/licitacao`.
+- A página apresenta o acesso ao Portal da Transparência de Pernambuco, os links indicados para PE-Integrado e e-Fisco e o aviso de intenção de contratar com documento de referência SEI_90640426_GOVPE — Anexo 10/2026.
+- O item “Licitações e Contratos” do menu Transparência aponta para a rota local.
+- Conteúdo transcrito e organizado a partir do HTML fornecido; validar atualização do aviso, documento e links com a área responsável antes da publicação.

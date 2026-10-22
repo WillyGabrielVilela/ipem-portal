@@ -482,3 +482,25 @@ img { display: block; max-width: 100%; }
 .legal-document-link:focus-visible { outline: 3px solid var(--pe-blue, #0034b7); outline-offset: 3px; border-radius: 3px; }
 @media (max-width: 760px) { .legal-documents-grid { grid-template-columns: 1fr; } }
 @media (max-width: 680px) { .legal-documents-page { padding-top: 28px; } }
+
+
+/* Licitações e Contratos */
+.procurement-page { padding-top: 42px; padding-bottom: 64px; }
+.procurement-heading { max-width: 980px; margin-bottom: 34px; }
+.procurement-heading h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.procurement-heading > p:not(.eyebrow) { color: var(--pe-muted); line-height: 1.75; }
+.procurement-primary-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 12px; padding: 12px 18px; border-radius: 8px; background: var(--pe-blue, #005a9c); color: #fff; font-weight: 750; text-decoration: none; }
+.procurement-primary-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.procurement-primary-link:focus-visible, .procurement-link:focus-visible { outline: 3px solid var(--pe-blue, #005a9c); outline-offset: 3px; border-radius: 3px; }
+.procurement-section, .procurement-notices { padding: 20px 0 30px; }
+.procurement-section-heading { max-width: 980px; margin-bottom: 22px; }
+.procurement-section-heading h2 { margin: 12px 0 8px; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.procurement-section-heading p { color: var(--pe-muted); line-height: 1.7; }
+.procurement-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.procurement-card, .procurement-notice-card { min-width: 0; }
+.procurement-card p, .procurement-notice-card p { line-height: 1.7; }
+.procurement-source, .procurement-sources-note { margin-top: 14px; color: var(--pe-muted); font-size: .92rem; }
+.procurement-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 5px; color: var(--pe-blue, #0034b7); font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+.procurement-notices .site-message { margin-top: 28px; }
+@media (max-width: 760px) { .procurement-grid { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .procurement-page { padding-top: 28px; } }
