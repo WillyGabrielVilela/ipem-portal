@@ -21,7 +21,7 @@ const menus = [
     ["Área Principal da Transparência", "/transparencia/area-principal"],
     ["LGPD", "/lei-geral-de-protecao-de-dados-pessoais-lgpd"],
     ["Plano de Metas", "/plano-de-metas"],
-    ["Editais e Portarias", "https://www.ipem.pe.gov.br/editais-e-portarias/"],
+    ["Editais e Portarias", "/editais-e-portarias"],
     ["Notificações de Autuação", "https://www.ipem.pe.gov.br/notificacao-de-atuacao/"],
     ["Licitações e Contratos", "https://www.ipem.pe.gov.br/licitacao/"],
     ["Despesas", "https://www.ipem.pe.gov.br/despesas/"],

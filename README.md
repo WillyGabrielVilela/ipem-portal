@@ -107,3 +107,10 @@ Foi adicionada a rota local `/quem-somos` a partir do HTML fornecido. A página 
 - Organiza os cinco links listados no HTML de referência: três planilhas (2025 e 2024) e duas páginas institucionais com planos de 2023/períodos avaliativos informados na origem.
 - O item “Plano de Metas” do menu Transparência aponta para a nova rota local.
 - A fonte fornecida não lista documento de 2026; confirmar a existência de documentos mais recentes e testar os links antes da publicação. Os arquivos e períodos foram organizados sem validar seu conteúdo ou situação atual.
+
+
+## Editais e Portarias
+- Rota local: `/editais-e-portarias`.
+- Organiza os 34 documentos listados no HTML de referência em 2026, 2025 e anos anteriores. Mantém os títulos e destinos informados na origem.
+- O item “Editais e Portarias” no menu Transparência aponta para a nova rota local.
+- A fonte apresenta alguns possíveis desencontros entre os números indicados nos títulos e os nomes dos arquivos; validar os documentos e todos os links com a área responsável antes de publicar.

@@ -462,3 +462,23 @@ img { display: block; max-width: 100%; }
 .goals-link:focus-visible { outline: 3px solid var(--pe-blue, #005a9c); outline-offset: 3px; border-radius: 3px; }
 @media (max-width: 760px) { .goals-grid { grid-template-columns: 1fr; } }
 @media (max-width: 680px) { .goals-page { padding-top: 28px; } }
+
+
+/* Editais e Portarias */
+.legal-documents-page { padding-top: 42px; padding-bottom: 64px; }
+.legal-documents-heading { max-width: 960px; margin-bottom: 28px; }
+.legal-documents-heading h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+.legal-documents-heading > p:not(.eyebrow) { color: var(--pe-muted); line-height: 1.75; }
+.legal-documents-page .site-message { margin: 20px 0 30px; }
+.legal-documents-section { padding: 24px 0 30px; }
+.legal-documents-section-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.legal-documents-section-heading h2 { margin: 0; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.legal-documents-section-heading p { margin: 0; color: var(--pe-muted); font-size: .9rem; }
+.legal-documents-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+.legal-documents-page .site-card-shell { min-width: 0; }
+.legal-documents-page .site-card-shell p { line-height: 1.65; }
+.legal-document-format { margin-top: 10px; color: var(--pe-muted); font-size: .9rem; }
+.legal-document-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--pe-blue, #0034b7); font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+.legal-document-link:focus-visible { outline: 3px solid var(--pe-blue, #0034b7); outline-offset: 3px; border-radius: 3px; }
+@media (max-width: 760px) { .legal-documents-grid { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .legal-documents-page { padding-top: 28px; } }
