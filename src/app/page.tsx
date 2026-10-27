@@ -19,8 +19,8 @@ export default function HomePage() {
       <div className="container hero-layout">
         <div className="hero-copy">
           <p className="eyebrow">Instituto de Pesos e Medidas de Pernambuco</p>
-          <h1>Instituto de Pesos e Medidas de Pernambuco</h1>
-          <p>Informações institucionais, serviços e notícias do IPEM-PE.</p>
+          <h1>Fiscalização, metrologia e proteção ao consumidor.</h1>
+          <p>Conheça as atividades do IPEM-PE, consulte serviços, acompanhe notícias e acesse informações públicas.</p>
           <div className="hero-actions">
             <SiteButton label="Acessar serviços" href="/servicos" icon="external-link" />
             <SiteButton label="Transparência" href="/transparencia" severity="secondary" outlined />
@@ -51,7 +51,7 @@ export default function HomePage() {
       </div>
     </section>
     <section className="container transparency-callout">
-      <div><p className="eyebrow">Acesso à informação</p><h2>Transparência e prestação de contas</h2><p>Consulte as áreas e os documentos de transparência disponíveis no portal institucional atual. Os links serão mantidos até a validação da nova estrutura.</p></div>
+      <div><p className="eyebrow">Acesso à informação</p><h2>Transparência e prestação de contas</h2><p>Acesse informações sobre despesas, licitações, contratos, convênios e outros documentos públicos do Instituto.</p></div>
       <SiteButton label="Acessar transparência" href="/transparencia" icon="external-link" />
     </section>
     <section className="container official-banner" aria-label="Assinatura institucional"><img src="https://www.ipem.pe.gov.br/wp-content/uploads/2026/07/Assinatura-Período-Eleitoral.png" alt="Assinatura institucional exibida no portal atual" loading="lazy" /></section>

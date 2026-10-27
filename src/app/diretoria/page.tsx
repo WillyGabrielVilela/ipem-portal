@@ -72,7 +72,7 @@ export default function QuemEQuemPage() {
               elevation="low"
             >
               <div className="directory-person-heading">
-                <SiteTag value={`${person.icon} ${person.section}`} severity={index === 0 ? "info" : "secondary"} />
+                <SiteTag value={`${person.icon} ${person.section}`} severity="info" />
               </div>
               <p className="directory-role">{person.role}</p>
               <SiteDivider />

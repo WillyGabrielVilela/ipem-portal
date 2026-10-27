@@ -157,15 +157,23 @@ img { display: block; max-width: 100%; }
 /* Cartões com o componente oficial Card do Design System Gov PE */
 .site-card-shell { min-width: 0; height: 100%; }
 .site-card-shell > * { height: 100%; }
-/* Corrige o fundo padrão do Card oficial, que pode ser renderizado escuro pela biblioteca. */
+/* Os cards mantêm fundo claro também quando a classe .dark é ativada pela GovBar.
+   Por isso, o texto usa tokens primitivos claros estáveis, e não --color-text-default,
+   que no tema .dark vira branco e perde contraste sobre o fundo claro do card. */
 .site-card-shell > * {
-  background: #fff !important;
-  background-color: #fff !important;
-  color: var(--pe-ink) !important;
-  border-color: var(--pe-border) !important;
+  background: var(--color-light-gray-softest, #f8fafc) !important;
+  background-color: var(--color-light-gray-softest, #f8fafc) !important;
+  color: var(--color-light-gray-strong, #28272c) !important;
+  border-color: var(--color-outline-default, var(--pe-border)) !important;
 }
-.site-card-shell > * :is(h1, h2, h3, h4, h5, h6, p, span, li, small, strong, em) {
-  color: var(--pe-ink);
+.site-card-shell > * :is(h1, h2, h3, h4, h5, h6, p, span, li, small, strong, em, [class*="title"], [class*="Title"]) {
+  color: var(--color-light-gray-strong, #28272c) !important;
+}
+.site-card-shell > * a {
+  color: var(--color-light-blue-default, #0034b7) !important;
+}
+.site-card-shell > * button {
+  color: inherit;
 }
 /* Preserva o modo de alto contraste quando o usuário o ativa na GovBar. */
 html.a11y-high-contrast body .site-card-shell > * {
@@ -174,8 +182,11 @@ html.a11y-high-contrast body .site-card-shell > * {
   color: #fff !important;
   border-color: #fff !important;
 }
-html.a11y-high-contrast body .site-card-shell > * :is(h1, h2, h3, h4, h5, h6, p, span, li, small, strong, em) {
+html.a11y-high-contrast body .site-card-shell > * :is(h1, h2, h3, h4, h5, h6, p, span, li, small, strong, em, [class*="title"], [class*="Title"]) {
   color: #fff !important;
+}
+html.a11y-high-contrast body .site-card-shell > * a {
+  color: #ffeb3b !important;
 }
 .site-card-shell .quick-symbol { display: inline-flex; align-items: center; justify-content: center; width: 2.7rem; height: 2.7rem; border-radius: .7rem; background: var(--brand-soft, #e8f2f8); color: var(--brand, #005a9c); font-size: 1.35rem; font-weight: 700; }
 .site-card-shell .quick-card p, .site-card-shell .news-content p { margin-top: .65rem; }
@@ -760,3 +771,128 @@ html.a11y-high-contrast body img { filter: grayscale(1) contrast(1.15); }
 .site-button-wrapper :is(button, a, [role="button"], .p-button):focus-visible { outline: 3px solid #ffcc29 !important; outline-offset: 3px; }
 @media (max-width: 560px) { .hero-actions .site-button-wrapper, .transparency-callout > .site-button-wrapper { width: 100%; } .site-button-wrapper :is(button, a, [role="button"], .p-button) { max-width: 100%; } }
 html.a11y-high-contrast body .site-button-wrapper :is(button, a, [role="button"], .p-button):is(:hover, :focus-visible) { background: #000 !important; background-color: #000 !important; color: #ffeb3b !important; border-color: #fff !important; }
+
+
+/* Refinamento visual geral — hierarquia, espaçamento e contraste consistentes. */
+:root {
+  --pe-blue: #0034b7;
+  --pe-blue-dark: #001a7a;
+  --pe-blue-soft: #e6f3ff;
+  --pe-ink: #28272c;
+  --pe-muted: #494c57;
+  --pe-border: #d7dfe9;
+  --pe-page: #f8fafc;
+  --pe-radius: 16px;
+}
+body { background: #f8fafc; color: #28272c; }
+.container { width: min(100% - 48px, 1240px); }
+.site-header { box-shadow: 0 4px 18px rgb(7 20 66 / 7%); }
+.brand-row { min-height: 108px; }
+.brand-mark { min-width: 78px; height: 60px; border-radius: 5px 5px 0 0; background: #0034b7; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 15%); }
+.brand strong { font-size: 1.08rem; letter-spacing: -.015em; }
+.site-nav { background: #0034b7; }
+.nav-inner { min-height: 58px; }
+.nav-home, .nav-item > a, .nav-item > span { min-height: 58px; padding-inline: 15px; font-size: .91rem; font-weight: 650; }
+.nav-home { border-bottom: 3px solid #ffcc29; }
+.nav-item:hover > a, .nav-item:hover > span, .nav-item:focus-within > a, .nav-item:focus-within > span { background: #001a7a; box-shadow: inset 0 -3px 0 #ffcc29; }
+.submenu { z-index: 20; padding: 10px; border-radius: 0 0 12px 12px; box-shadow: 0 16px 36px rgb(7 20 66 / 18%); }
+.submenu a { padding: 11px 12px; line-height: 1.4; }
+.news-ticker { border-bottom-color: #e1e7ef; }
+.ticker-inner { min-height: 52px; gap: 18px; }
+.ticker-inner strong { padding: 5px 10px; border-radius: 5px; background: #e6f3ff; color: #0034b7; }
+.ticker-inner > a:not(.ticker-more) { color: #28272c; text-decoration: none; }
+.ticker-inner > a:not(.ticker-more):hover { color: #0034b7; text-decoration: underline; }
+.ticker-more { color: #0034b7; font-weight: 750; text-decoration: none; }
+.hero-band { position: relative; overflow: hidden; padding: 58px 0 62px; background: linear-gradient(118deg, #071442 0%, #0034b7 68%, #1357ac 100%); border: 0; }
+.hero-band::before { content: ""; position: absolute; width: 520px; height: 520px; right: -150px; top: -250px; border: 1px solid rgb(255 255 255 / 13%); border-radius: 50%; box-shadow: 0 0 0 50px rgb(255 255 255 / 3%), 0 0 0 100px rgb(255 255 255 / 2%); pointer-events: none; }
+.hero-layout { position: relative; z-index: 1; grid-template-columns: .9fr 1.1fr; gap: 56px; }
+.hero-copy .eyebrow { color: #ffdf70; letter-spacing: .12em; }
+.hero-copy h1 { max-width: 580px; color: #fff; font-size: clamp(2.35rem, 4.5vw, 3.8rem); line-height: 1.07; letter-spacing: -.045em; }
+.hero-copy > p:not(.eyebrow) { max-width: 500px; color: #e3ecff; font-size: 1.12rem; line-height: 1.75; }
+.hero-visual { min-height: 390px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 18px; box-shadow: 0 24px 60px rgb(0 0 0 / 25%); }
+.hero-visual > img { height: 390px; }
+.hero-caption { padding: 72px 26px 25px; background: linear-gradient(transparent, rgb(3 14 39 / 92%)); }
+.hero-caption a { display: block; max-width: 600px; font-size: clamp(1.05rem, 1.6vw, 1.35rem); }
+.hero-caption a:hover { color: #ffdf70; }
+.hero-actions { gap: 14px; margin-top: 30px; }
+.section-block { padding-block: 64px; }
+.section-heading { margin-bottom: 22px; }
+.section-heading h2, .transparency-callout h2 { color: #071442; font-size: clamp(1.7rem, 3vw, 2.35rem); letter-spacing: -.035em; }
+.section-heading .eyebrow { margin-bottom: 7px; }
+.section-heading > p { max-width: 420px; line-height: 1.6; }
+.section-block > .site-divider { margin-bottom: 24px; }
+.quick-grid { gap: 18px; }
+.site-card-shell { min-width: 0; height: 100%; }
+.site-card-shell > * { height: 100%; }
+/* O Card oficial é mantido, mas recebe uma superfície clara e texto de alto contraste. */
+.site-card-shell > * {
+  background: #fff !important;
+  background-color: #fff !important;
+  color: #28272c !important;
+  border: 1px solid #d7dfe9 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 3px 12px rgb(7 20 66 / 4%);
+  overflow: hidden;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.site-card-shell > * :is(h1,h2,h3,h4,h5,h6,p,span,li,small,strong,em,time,div) { color: #28272c; }
+.site-card-shell > * :is(p,small,time) { color: #494c57 !important; }
+.site-card-shell > * a { color: #0034b7 !important; }
+.site-card-shell.quick-card > * { padding: 24px !important; }
+.site-card-shell.quick-card:hover > * { transform: translateY(-3px); border-color: #99c6ff !important; box-shadow: 0 16px 34px rgb(7 20 66 / 10%); }
+.site-card-shell .quick-symbol { width: 48px; height: 48px; border-radius: 13px; background: #e6f3ff; color: #0034b7; font-size: 1.55rem; }
+.site-card-shell .quick-card h3 { margin: 18px 0 8px; color: #071442 !important; font-size: 1.12rem; line-height: 1.35; }
+.site-card-shell .quick-card p { margin: 0 0 20px; color: #494c57 !important; font-size: .94rem; line-height: 1.65; }
+.site-card-shell .card-link, .site-card-shell .text-link { color: #0034b7 !important; font-weight: 800; text-decoration: none; }
+.site-card-shell .card-link:hover, .site-card-shell .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.news-grid { gap: 22px; }
+.site-card-shell.news-card > * { padding: 0 !important; }
+.site-card-shell .news-image { display: block; height: 218px; border-radius: 0; background: #e7e9eb; }
+.site-card-shell .news-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.site-card-shell.news-card:hover .news-image img { transform: scale(1.035); }
+.site-card-shell .news-content { padding: 22px 23px 24px; }
+.site-card-shell .news-content time { display: inline-block; margin-bottom: 8px; color: #494c57 !important; font-size: .82rem; }
+.site-card-shell .news-content h3 { margin: 0 0 10px; font-size: 1.13rem; line-height: 1.45; }
+.site-card-shell .news-content h3 a { color: #071442 !important; text-decoration: none; }
+.site-card-shell .news-content h3 a:hover { color: #0034b7 !important; text-decoration: underline; text-underline-offset: 3px; }
+.site-card-shell .news-content p { margin: 0 0 18px; font-size: .93rem; line-height: 1.7; }
+.section-tint { background: #eef3f9; border-block: 1px solid #e0e7f0; }
+.transparency-callout { margin-block: 22px 38px; padding: 34px 38px; border: 1px solid #c9d9f1; border-left: 5px solid #0034b7; border-radius: 16px; background: linear-gradient(110deg, #e6f3ff, #fff 78%); }
+.transparency-callout h2 { max-width: 680px; }
+.transparency-callout p:not(.eyebrow) { max-width: 700px; line-height: 1.75; }
+.official-banner { padding-bottom: 42px; }
+.official-banner img { border-radius: 12px; }
+.site-footer { background: #071442; }
+.footer-grid { gap: 54px; padding-block: 50px; }
+.footer-brand { color: #fff; letter-spacing: .03em; }
+.site-footer h2 { color: #fff; font-size: 1.02rem; }
+.site-footer a { text-decoration-color: rgb(255 255 255 / 40%); text-underline-offset: 3px; }
+.site-footer a:hover { color: #ffdf70; }
+.footer-bottom { color: #d9e5fb; }
+html.a11y-high-contrast body .site-card-shell > * { background: #000 !important; background-color: #000 !important; color: #fff !important; border-color: #fff !important; }
+html.a11y-high-contrast body .site-card-shell > * :is(h1,h2,h3,h4,h5,h6,p,span,li,small,strong,em,time,div) { color: #fff !important; }
+html.a11y-high-contrast body .site-card-shell > * a { color: #ffeb3b !important; }
+@media (max-width: 960px) {
+  .container { width: min(100% - 36px, 1240px); }
+  .hero-layout { gap: 32px; }
+  .hero-band { padding-block: 46px; }
+  .hero-visual, .hero-visual > img { min-height: 330px; height: 330px; }
+  .nav-home, .nav-item > a, .nav-item > span { padding-inline: 10px; font-size: .84rem; }
+}
+@media (max-width: 680px) {
+  .container { width: min(100% - 28px, 1240px); }
+  .brand-row { min-height: 82px; }
+  .hero-band { padding-block: 34px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 28px; }
+  .hero-copy h1 { font-size: clamp(2.15rem, 10vw, 3rem); }
+  .hero-visual, .hero-visual > img { min-height: 260px; height: 260px; }
+  .section-block { padding-block: 42px; }
+  .quick-grid, .news-grid { grid-template-columns: 1fr; }
+  .site-card-shell.quick-card > * { padding: 21px !important; }
+  .site-card-shell .news-image { height: 220px; }
+  .transparency-callout { margin-block: 10px 30px; padding: 25px 22px; }
+  .footer-grid { gap: 28px; padding-block: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
