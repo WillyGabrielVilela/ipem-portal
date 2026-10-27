@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// import "@uigovpe/styles";
+import "@uigovpe/styles";
 import "./globals.css";
 import GovernmentBar from "@/components/GovernmentBar";
 import SiteHeader from "@/components/SiteHeader";

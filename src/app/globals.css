@@ -13,7 +13,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--pe-page); color: var(--pe-ink); font-family: var(--font-inter), Inter, Arial, sans-serif; font-size: 16px; line-height: 1.6; }
+body { margin: 0; background: var(--pe-page); color: var(--pe-ink); font-family: var(--font-inter), Inter, Arial, sans-serif; font-size: 1rem; line-height: 1.6; }
 a { color: var(--pe-blue); text-decoration-thickness: .08em; text-underline-offset: .18em; }
 a:hover { color: var(--pe-blue-dark); }
 a:focus-visible, button:focus-visible { outline: 3px solid #e5a900; outline-offset: 3px; }
@@ -145,18 +145,38 @@ img { display: block; max-width: 100%; }
 /* Alinhamento dos botões oficiais @uigovpe/components nas áreas de chamada para ação. */
 .hero-actions { align-items: center; }
 .hero-actions > * { flex: 0 0 auto; }
-.transparency-callout > button { flex-shrink: 0; }
+.transparency-callout > .site-button-wrapper { flex-shrink: 0; }
 .section-heading > button { flex-shrink: 0; }
 @media (max-width: 560px) {
   .hero-actions { align-items: stretch; }
   .hero-actions > * { width: 100%; }
-  .transparency-callout > button { width: 100%; }
+  .transparency-callout > .site-button-wrapper { width: 100%; }
 }
 
 
 /* Cartões com o componente oficial Card do Design System Gov PE */
 .site-card-shell { min-width: 0; height: 100%; }
 .site-card-shell > * { height: 100%; }
+/* Corrige o fundo padrão do Card oficial, que pode ser renderizado escuro pela biblioteca. */
+.site-card-shell > * {
+  background: #fff !important;
+  background-color: #fff !important;
+  color: var(--pe-ink) !important;
+  border-color: var(--pe-border) !important;
+}
+.site-card-shell > * :is(h1, h2, h3, h4, h5, h6, p, span, li, small, strong, em) {
+  color: var(--pe-ink);
+}
+/* Preserva o modo de alto contraste quando o usuário o ativa na GovBar. */
+html.a11y-high-contrast body .site-card-shell > * {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+html.a11y-high-contrast body .site-card-shell > * :is(h1, h2, h3, h4, h5, h6, p, span, li, small, strong, em) {
+  color: #fff !important;
+}
 .site-card-shell .quick-symbol { display: inline-flex; align-items: center; justify-content: center; width: 2.7rem; height: 2.7rem; border-radius: .7rem; background: var(--brand-soft, #e8f2f8); color: var(--brand, #005a9c); font-size: 1.35rem; font-weight: 700; }
 .site-card-shell .quick-card p, .site-card-shell .news-content p { margin-top: .65rem; }
 .site-card-shell .news-image { display: block; overflow: hidden; }
@@ -706,3 +726,37 @@ img { display: block; max-width: 100%; }
 .ombudsman-no-report { color: #777; }
 .ombudsman-page .site-message { margin-top: 26px; }
 @media (max-width: 760px) { .ombudsman-channel-grid, .ombudsman-contact-grid, .ombudsman-law-grid { grid-template-columns: 1fr; } .ombudsman-intro { grid-template-columns: 1fr; padding: 21px; } .ombudsman-contact { padding: 21px; } }
+
+/* Acessibilidade: estado de alto contraste acionado pela GovBar. */
+html.a11y-high-contrast,
+html.a11y-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+  color-scheme: dark;
+}
+html.a11y-high-contrast body * {
+  border-color: #fff !important;
+  box-shadow: none !important;
+}
+html.a11y-high-contrast body :is(p, span, li, small, strong, em, h1, h2, h3, h4, h5, h6, label, time) {
+  color: #fff !important;
+}
+html.a11y-high-contrast body :is(a, button) {
+  color: #ffeb3b !important;
+}
+html.a11y-high-contrast body :is(.site-header, .site-nav, .site-footer, .quick-card, .news-card, .contact-panel, .resource-item, .hero-band, .section-tint, .submenu) {
+  background: #000 !important;
+  color: #fff !important;
+}
+html.a11y-high-contrast body img { filter: grayscale(1) contrast(1.15); }
+
+
+/* Corrige o hover preto dos botões oficiais sem alterar os demais estados do portal. */
+.site-button-wrapper { display: inline-flex; flex: 0 0 auto; vertical-align: middle; }
+.site-button-wrapper :is(button, a, [role="button"], .p-button) { transition: background-color .16s ease, color .16s ease, border-color .16s ease, box-shadow .16s ease; }
+.site-button-wrapper.is-primary :is(button, a, [role="button"], .p-button):is(:hover, :focus-visible) { background: var(--pe-blue-dark, #002b72) !important; background-color: var(--pe-blue-dark, #002b72) !important; border-color: var(--pe-blue-dark, #002b72) !important; color: #fff !important; }
+.site-button-wrapper.is-secondary :is(button, a, [role="button"], .p-button):is(:hover, :focus-visible) { background: #eaf2ff !important; background-color: #eaf2ff !important; border-color: var(--pe-blue, #003da5) !important; color: var(--pe-blue, #003da5) !important; }
+.site-button-wrapper.is-link :is(button, a, [role="button"], .p-button):is(:hover, :focus-visible) { background: #eaf2ff !important; background-color: #eaf2ff !important; border-color: transparent !important; color: var(--pe-blue, #003da5) !important; }
+.site-button-wrapper :is(button, a, [role="button"], .p-button):focus-visible { outline: 3px solid #ffcc29 !important; outline-offset: 3px; }
+@media (max-width: 560px) { .hero-actions .site-button-wrapper, .transparency-callout > .site-button-wrapper { width: 100%; } .site-button-wrapper :is(button, a, [role="button"], .p-button) { max-width: 100%; } }
+html.a11y-high-contrast body .site-button-wrapper :is(button, a, [role="button"], .p-button):is(:hover, :focus-visible) { background: #000 !important; background-color: #000 !important; color: #ffeb3b !important; border-color: #fff !important; }

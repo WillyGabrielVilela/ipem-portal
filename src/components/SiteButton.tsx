@@ -26,19 +26,24 @@ export default function SiteButton({
   size,
   rounded = false,
 }: SiteButtonProps) {
+  const variant = link || plain ? "is-link" : outlined || severity === "secondary" ? "is-secondary" : "is-primary";
+
   return (
-    <Button
-      label={label}
-      severity={severity}
-      outlined={outlined}
-      link={link}
-      plain={plain}
-      icon={icon}
-      size={size}
-      rounded={rounded}
-      onClick={() => {
-        window.location.assign(href);
-      }}
-    />
+    <span className={`site-button-wrapper ${variant}`}>
+      <Button
+        label={label}
+        severity={severity}
+        outlined={outlined}
+        link={link}
+        plain={plain}
+        icon={icon}
+        size={size}
+        rounded={rounded}
+        onClick={() => {
+          // A navegação é executada somente após uma interação real do usuário.
+          window.location.href = href;
+        }}
+      />
+    </span>
   );
 }

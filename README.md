@@ -178,3 +178,9 @@ A página `/perguntas-frequentes` exibe as imagens referenciadas no HTML legado 
 - Reúne os canais Ouve.PE e Fala.BR, os contatos diretos transcritos da referência, links de legislação e tabela de relatórios de 2021 a 2025.
 - O item Ouvidoria do menu principal agora aponta para a página local. Os sistemas de manifestação e os PDFs continuam em endereços externos.
 - A página não recebe nem protocola manifestações diretamente. Confirmar com a Ouvidoria a atualidade dos contatos, plataformas, procedimento presencial, classificação dos relatórios e disponibilidade dos arquivos antes da publicação.
+
+### Correção pontual de interatividade (GovBar)
+
+A GovBar continua sendo renderizada pelo componente oficial `GovBar` de `@uigovpe/components`. Foi adicionado tratamento de clique na área da barra para os controles identificáveis de diminuir/aumentar/restaurar texto e contraste, para que essas ações tenham comportamento real mesmo se a versão instalada não conectar os eventos internamente. O alto contraste é aplicado por uma classe no elemento `html`; o tamanho de texto é ajustado na raiz do documento. O botão de cookies continua ligado ao diálogo informativo.
+
+Esta alteração preserva as rotas e páginas do projeto. Como as dependências não puderam ser instaladas neste ambiente, executar `npm install`, `npm run typecheck` e `npm run build` antes de publicar. Se os controles da versão instalada usarem rótulos/atributos diferentes, os seletores de reconhecimento em `src/components/GovernmentBar.tsx` precisarão ser ajustados com base no DOM renderizado.
