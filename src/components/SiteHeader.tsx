@@ -1,12 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { siteNavigation } from "@/config/site-navigation";
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const closeMenu = () => setOpen(false);
+
+  // Fecha menus que ficaram abertos por foco quando a rota muda.
+  useEffect(() => {
+    setOpen(false);
+    const activeElement = document.activeElement;
+    if (activeElement instanceof HTMLElement && activeElement.closest(".site-nav")) {
+      activeElement.blur();
+    }
+  }, [pathname]);
+
+  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isGroupCurrent = (menu: (typeof siteNavigation)[number]) =>
+    Boolean(menu.href && isCurrent(menu.href)) || menu.items.some((item) => isCurrent(item.href));
 
   return (
     <header className="site-header">
@@ -21,10 +36,10 @@ export default function SiteHeader() {
         <div className="container nav-inner">
           <Link className="nav-home" href="/" aria-label="Início" onClick={closeMenu}>⌂</Link>
           {siteNavigation.map((menu) => (
-            <div className="nav-item" key={menu.label}>
-              {menu.href ? <Link href={menu.href} onClick={closeMenu}>{menu.label}</Link> : <span tabIndex={0}>{menu.label}</span>}
+            <div className={`nav-item${isGroupCurrent(menu) ? " is-current" : ""}`} key={menu.label}>
+              {menu.href ? <Link href={menu.href} aria-current={pathname === menu.href ? "page" : undefined} onClick={closeMenu}>{menu.label}</Link> : <span tabIndex={0}>{menu.label}</span>}
               <div className="submenu">
-                {menu.items.map((item) => <Link key={`${item.label}:${item.href}`} href={item.href} onClick={closeMenu}>{item.label}</Link>)}
+                {menu.items.map((item) => <Link key={`${item.label}:${item.href}`} href={item.href} aria-current={pathname === item.href ? "page" : undefined} className={pathname === item.href ? "is-current-page" : undefined} onClick={closeMenu}>{item.label}</Link>)}
               </div>
             </div>
           ))}

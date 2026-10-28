@@ -905,3 +905,22 @@ html.a11y-high-contrast body .site-card-shell > * a { color: #ffeb3b !important;
 .article-lead-image { margin: 1.5rem 0; overflow: hidden; border-radius: 1rem; background: #f8fafc; }
 .article-lead-image img { display: block; width: 100%; max-height: 520px; object-fit: cover; }
 @media (max-width: 640px) { .resource-card-grid { grid-template-columns: minmax(0, 1fr); } .article-page h1 { max-width: none; } }
+
+
+/* Estado ativo da navegação separado do foco de teclado. */
+.site-nav .nav-item.is-current > a,
+.site-nav .nav-item.is-current > span {
+  background: #001a7a;
+  color: #fff;
+  box-shadow: inset 0 -3px 0 #ffcc29;
+}
+.site-nav .submenu a[aria-current="page"],
+.site-nav .submenu a.is-current-page {
+  background: #e6f3ff;
+  color: #071442;
+  font-weight: 700;
+}
+.site-nav .submenu a[aria-current="page"]:hover,
+.site-nav .submenu a.is-current-page:hover {
+  background: #d6eaff;
+}
