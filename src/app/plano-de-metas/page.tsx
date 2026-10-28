@@ -34,15 +34,15 @@ const plans = [
     year: "2023",
     title: "Plano de Metas IPEM-PE — GOGM",
     detail: "Período avaliativo informado na página original: junho de 2022 a maio de 2023.",
-    href: "https://www.ipem.pe.gov.br/plano_de_metas_gogm/",
-    format: "Página institucional",
+    href: "/plano-de-metas/gogm-2023",
+    format: "Página em migração",
   },
   {
     year: "2023",
     title: "Plano de Metas IPEM-PE — GOGP / GOAF / GOAAF",
     detail: "Período indicado na página original: janeiro a dezembro de 2023.",
-    href: "https://www.ipem.pe.gov.br/plano_de_metas_gogp_goaf_goaaf/",
-    format: "Página institucional",
+    href: "/plano-de-metas/gogp-goaf-goaaf-2023",
+    format: "Página em migração",
   },
 ];
 
@@ -74,8 +74,8 @@ export default function PlanoDeMetasPage() {
             <SiteCard key={plan.title} title={plan.title} subtitle={`Ano de referência: ${plan.year}`} elevation="low" className="goals-card">
               <p>{plan.detail}</p>
               <p className="goals-format"><span>Formato:</span> {plan.format}</p>
-              <a className="goals-link" href={plan.href} target="_blank" rel="noreferrer">
-                {plan.format.startsWith("Planilha") ? "Abrir planilha" : "Consultar página"} <span aria-hidden="true">↗</span>
+              <a className="goals-link" href={plan.href}>
+                {plan.format.startsWith("Planilha") ? "Abrir planilha" : "Consultar página"} <span aria-hidden="true">→</span>
               </a>
             </SiteCard>
           ))}

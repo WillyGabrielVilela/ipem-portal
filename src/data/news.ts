@@ -1,4 +1,5 @@
 export type NewsItem = {
+  slug: string;
   title: string;
   date: string;
   excerpt: string;
@@ -9,6 +10,7 @@ export type NewsItem = {
 
 export const news: NewsItem[] = [
   {
+    slug: "ipem-pe-identifica-irregularidades-balancas-aeroporto-guararapes",
     title: "Ipem-PE identifica irregularidades em balanças durante fiscalização no Aeroporto dos Guararapes",
     date: "22/05/2026",
     excerpt: "O Instituto de Pesos e Medidas de Pernambuco (Ipem-PE) realizou uma operação de fiscalização no Aeroporto dos Guararapes.",
@@ -17,6 +19,7 @@ export const news: NewsItem[] = [
     alt: "Imagem da notícia sobre fiscalização de balanças no Aeroporto dos Guararapes",
   },
   {
+    slug: "ipem-pe-encontra-irregularidades-bicos-combustivel-paulista",
     title: "Ipem-PE encontra irregularidades em todos os bicos de combustível fiscalizados em posto no município de Paulista",
     date: "17/12/2025",
     excerpt: "Notícia sobre ação de fiscalização em posto de combustíveis no município de Paulista.",
@@ -25,6 +28,7 @@ export const news: NewsItem[] = [
     alt: "Imagem da fiscalização em posto de combustíveis",
   },
   {
+    slug: "ipem-pe-apreende-balancas-irregulares-ipojuca",
     title: "Ipem-PE apreende 21 balanças irregulares em ação de fiscalização no município de Ipojuca",
     date: "16/12/2025",
     excerpt: "Notícia sobre apreensão de balanças irregulares em ação de fiscalização no município de Ipojuca.",
@@ -33,6 +37,7 @@ export const news: NewsItem[] = [
     alt: "Imagem relacionada à fiscalização de balanças",
   },
   {
+    slug: "ipem-pe-reprova-balancas-aeroporto-guararapes",
     title: "Ipem-PE reprova 48 balanças durante fiscalização no Aeroporto Internacional dos Guararapes",
     date: "04/12/2025",
     excerpt: "Notícia sobre fiscalização de balanças utilizadas no Aeroporto Internacional dos Guararapes.",
@@ -41,6 +46,7 @@ export const news: NewsItem[] = [
     alt: "Imagem da ação de fiscalização de balanças",
   },
   {
+    slug: "inmetro-governo-entregam-nova-sede-ipem",
     title: "Inmetro e Governo de Pernambuco entregam nova sede do Ipem",
     date: "06/11/2025",
     excerpt: "Reforma moderniza a estrutura do Instituto de Pesos e Medidas e amplia a atuação em defesa do consumidor.",

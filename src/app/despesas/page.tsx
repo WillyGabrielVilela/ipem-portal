@@ -45,8 +45,8 @@ export default function DespesasPage() {
 
       <section className="expenses-public-portal" aria-labelledby="expenses-portal-title">
         <SiteCard title="Despesas realizadas em Pernambuco" elevation="low" className="expenses-portal-card">
-          <p id="expenses-portal-title">Acesse a página indicada no site institucional para consultar as despesas realizadas em Pernambuco.</p>
-          <a className="expenses-link" href="http://www.ipem.pe.gov.br/despesas/despesas_realizadas_pe/" target="_blank" rel="noopener noreferrer">Acessar despesas realizadas PE <span aria-hidden="true">↗</span></a>
+          <p id="expenses-portal-title">Acesse o Portal da Transparência de Pernambuco para consultar as despesas públicas estaduais.</p>
+          <a className="expenses-link" href="https://transparencia.pe.gov.br/despesas/menu-despesas/" target="_blank" rel="noopener noreferrer">Acessar despesas no Portal da Transparência <span aria-hidden="true">↗</span></a>
         </SiteCard>
       </section>
 

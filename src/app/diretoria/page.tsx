@@ -96,9 +96,9 @@ export default function QuemEQuemPage() {
         <h2>Estrutura institucional</h2>
         <p>Consulte também outras páginas institucionais do portal.</p>
         <div className="directory-actions">
-          <SiteButton label="Quem somos" href="https://www.ipem.pe.gov.br/quem-somos/" />
-          <SiteButton label="Organograma" href="https://www.ipem.pe.gov.br/organograma/" outlined />
-          <SiteButton label="Unidades" href="https://www.ipem.pe.gov.br/unidades/" outlined />
+          <SiteButton label="Quem somos" href="/quem-somos" />
+          <SiteButton label="Organograma" href="/organograma" outlined />
+          <SiteButton label="Unidades" href="/unidades" outlined />
         </div>
       </section>
     </main>

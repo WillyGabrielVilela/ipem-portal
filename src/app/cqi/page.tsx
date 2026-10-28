@@ -77,7 +77,7 @@ export default function CqiPage() {
         <div className="cqi-actions">
           <SiteButton label="CML — Metrologia Legal" href="/cml" />
           <SiteButton label="Pré-Embalados" href="/pre-medidos" outlined />
-          <SiteButton label="Ouvidoria" href="https://www.ipem.pe.gov.br/formulario-de-denuncia/" outlined />
+          <SiteButton label="Ouvidoria" href="/formulario-de-denuncia" outlined />
         </div>
       </section>
     </main>

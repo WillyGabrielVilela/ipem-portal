@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SiteDivider from "@/components/SiteDivider";
 import SiteMessage from "@/components/SiteMessage";
 
@@ -23,10 +24,10 @@ const portalLinks = [
 ];
 
 const institutionalLinks = [
-  { title: "Estrutura organizacional", href: "https://www.ipem.pe.gov.br/organograma/", description: "Conheça a estrutura organizacional do IPEM-PE." },
-  { title: "Quem é quem", href: "https://www.ipem.pe.gov.br/diretoria/", description: "Consulte os ocupantes dos principais cargos e os contatos publicados pelo Instituto." },
+  { title: "Estrutura organizacional", href: "/organograma", description: "Conheça a estrutura organizacional do IPEM-PE." },
+  { title: "Quem é quem", href: "/diretoria", description: "Consulte os ocupantes dos principais cargos e os contatos publicados pelo Instituto." },
   { title: "Carta de Serviços ao Usuário", href: "https://www.pecidadao.pe.gov.br/busca-geral/ipem", description: "Consulte os serviços do IPEM-PE no Portal do Cidadão de Pernambuco." },
-  { title: "Perguntas frequentes", href: "https://www.ipem.pe.gov.br/duvidas-frequentes/", description: "Acesse as dúvidas frequentes do portal institucional." },
+  { title: "Perguntas frequentes", href: "/perguntas-frequentes", description: "Acesse as dúvidas frequentes do portal institucional." },
 ];
 
 const legislation = [
@@ -47,7 +48,7 @@ const csvFiles = [
 function LinkCards({ items }: { items: { title: string; href: string; description: string }[] }) {
   return <div className="transparency-links-grid">{items.map((item) => <article className="transparency-link-card" key={item.href}>
     <h3>{item.title}</h3><p>{item.description}</p>
-    <a href={item.href} target="_blank" rel="noreferrer">Acessar informação <span aria-hidden="true">↗</span></a>
+    {item.href.startsWith("/") ? <Link href={item.href}>Acessar informação <span aria-hidden="true">→</span></Link> : <a href={item.href} target="_blank" rel="noreferrer">Acessar informação <span aria-hidden="true">↗</span></a>}
   </article>)}</div>;
 }
 
@@ -104,7 +105,7 @@ export default function AreaPrincipalTransparenciaPage() {
     </section>
 
     <SiteDivider />
-    <section className="transparency-section" aria-labelledby="ouvidoria"><h2 id="ouvidoria">Ouvidoria</h2><p>A Ouvidoria é apresentada no conteúdo de referência como canal para sugestões, elogios, pedidos de informação, sinalização de problemas e denúncias.</p><div className="transparency-action-row"><a className="button button-primary" href="https://www.ipem.pe.gov.br/formulario-de-denuncia/" target="_blank" rel="noreferrer">Acessar Ouvidoria do IPEM-PE ↗</a><a className="button button-secondary" href="https://transparencia.pe.gov.br/participacao-cidada-pe/ouvidoria/" target="_blank" rel="noreferrer">Ouvidoria no Portal da Transparência ↗</a></div></section>
+    <section className="transparency-section" aria-labelledby="ouvidoria"><h2 id="ouvidoria">Ouvidoria</h2><p>A Ouvidoria é apresentada no conteúdo de referência como canal para sugestões, elogios, pedidos de informação, sinalização de problemas e denúncias.</p><div className="transparency-action-row"><Link className="button button-primary" href="/formulario-de-denuncia">Acessar canais de denúncia →</Link><a className="button button-secondary" href="https://transparencia.pe.gov.br/participacao-cidada-pe/ouvidoria/" target="_blank" rel="noreferrer">Ouvidoria no Portal da Transparência ↗</a></div></section>
 
     <SiteDivider />
     <section className="transparency-section" aria-labelledby="redes"><h2 id="redes">Redes sociais digitais</h2><div className="transparency-social-links"><a href="https://www.instagram.com/ipempe/" target="_blank" rel="noreferrer">Instagram do IPEM-PE ↗</a><a href="https://www.youtube.com/c/IpemPernambuco" target="_blank" rel="noreferrer">Canal do IPEM-PE no YouTube ↗</a></div></section>

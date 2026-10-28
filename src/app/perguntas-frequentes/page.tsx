@@ -89,7 +89,7 @@ const questions = [
         <li>Data e descrição objetiva do problema.</li>
         <li>Fotos, nota fiscal ou outros comprovantes relacionados à ocorrência.</li>
       </ul>
-      <p><a href="https://www.ipem.pe.gov.br/formulario-de-denuncia/" target="_blank" rel="noopener noreferrer">Acessar o formulário de denúncia do IPEM-PE ↗</a></p>
+      <p><a href="/formulario-de-denuncia" target="_blank" rel="noopener noreferrer">Acessar o formulário de denúncia do IPEM-PE ↗</a></p>
     </>,
   },
   {
@@ -181,7 +181,7 @@ export default function PerguntasFrequentesPage() {
           <h2 id="faq-contact-title">Não encontrou sua resposta?</h2>
           <p>Consulte os canais oficiais de atendimento ou envie uma denúncia quando houver suspeita de irregularidade.</p>
           <div className="faq-actions">
-            <a className="faq-primary-link" href="https://www.ipem.pe.gov.br/formulario-de-denuncia/" target="_blank" rel="noopener noreferrer">Formulário de denúncia <span aria-hidden="true">↗</span></a>
+            <a className="faq-primary-link" href="/formulario-de-denuncia" target="_blank" rel="noopener noreferrer">Formulário de denúncia <span aria-hidden="true">↗</span></a>
             <a className="faq-secondary-link" href="https://servicos.rbmlq.gov.br/segundaviagru/" target="_blank" rel="noopener noreferrer">Portal de serviços ao cidadão <span aria-hidden="true">↗</span></a>
           </div>
         </div>

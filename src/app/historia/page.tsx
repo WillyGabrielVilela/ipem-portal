@@ -142,9 +142,9 @@ export default function HistoriaPage() {
         <h2>Conheça mais sobre o IPEM-PE</h2>
         <p>Consulte outras páginas institucionais disponíveis no portal.</p>
         <div className="history-actions">
-          <SiteButton label="Quem somos" href="https://www.ipem.pe.gov.br/quem-somos/" />
-          <SiteButton label="Quem é quem" href="https://www.ipem.pe.gov.br/diretoria/" outlined />
-          <SiteButton label="Organograma" href="https://www.ipem.pe.gov.br/organograma/" outlined />
+          <SiteButton label="Quem somos" href="/quem-somos" />
+          <SiteButton label="Quem é quem" href="/diretoria" outlined />
+          <SiteButton label="Organograma" href="/organograma" outlined />
         </div>
       </section>
     </main>

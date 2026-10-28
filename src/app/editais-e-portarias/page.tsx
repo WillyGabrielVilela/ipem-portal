@@ -28,7 +28,7 @@ const groups: DocumentGroup[] = [
     { title: "PORTARIA N° 16/2026/IPEM/PE/PR", href: "https://www.ipem.pe.gov.br/wp-content/uploads/2026/04/SEI_84484294_GOVPE___Portaria_14-1.pdf", format: "PDF" },
     { title: "PORTARIA Nº 15/2026/IPEM/PE/PR", href: "https://www.ipem.pe.gov.br/wp-content/uploads/2026/03/SEI_83492190_GOVPE___Portaria_13-1.pdf", format: "PDF" },
     { title: "PORTARIA Nº 13/2026/IPEM/PE/PR", href: "https://www.ipem.pe.gov.br/wp-content/uploads/2026/03/SEI_83310962_GOVPE___Portaria_11.pdf", format: "PDF" },
-    { title: "PORTARIA Nº 05/2026/IPEM/PE/PR", href: "https://www.ipem.pe.gov.br/editais-e-portarias/sei_80424068_govpe___portaria_4/", format: "Página institucional" },
+    { title: "PORTARIA Nº 05/2026/IPEM/PE/PR", href: "/editais-e-portarias/sei_80424068_govpe___portaria_4", format: "Página em migração" },
     { title: "PORTARIA Nº 03/2026/IPEM/PE/PR", href: "https://www.ipem.pe.gov.br/wp-content/uploads/2026/02/SEI_79913694_GOVPE___Portaria_2.pdf", format: "PDF" },
   ]},
   { year: "2025", items: [
@@ -73,7 +73,7 @@ export default function EditaisEPortariasPage() {
             {group.items.map((item) => (
               <SiteCard key={item.title} title={item.title} elevation="low" className="legal-document-card">
                 <p className="legal-document-format">Formato: {item.format}</p>
-                <a className="legal-document-link" href={item.href} target="_blank" rel="noreferrer">Acessar documento <span aria-hidden="true">↗</span></a>
+                <a className="legal-document-link" href={item.href}>Acessar documento <span aria-hidden="true">→</span></a>
               </SiteCard>
             ))}
           </div>

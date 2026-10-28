@@ -17,8 +17,8 @@ const groups: NoticeGroup[] = [
     items: [
       {
         title: "Edital de Notificação de Autuação Nº 01/2026",
-        href: "http://www.ipem.pe.gov.br/notificacao-de-atuacao/sei_80352309_govpe___edital-2/",
-        format: "Página institucional",
+        href: "/notificacao-de-atuacao/sei_80352309_govpe___edital-2",
+        format: "Página em migração",
       },
     ],
   },
@@ -27,8 +27,8 @@ const groups: NoticeGroup[] = [
     items: [
       {
         title: "Edital de Notificação de Autuação Nº 03/2025",
-        href: "http://www.ipem.pe.gov.br/notificacao-de-atuacao/edital-de-notificacao-de-autuacao-n-03-2025/",
-        format: "Página institucional",
+        href: "/notificacao-de-atuacao/edital-de-notificacao-de-autuacao-n-03-2025",
+        format: "Página em migração",
       },
       {
         title: "Edital de Notificação de Autuação Nº 02/2025",
@@ -79,8 +79,8 @@ export default function NotificacaoDeAtuacaoPage() {
             {group.items.map((item) => (
               <SiteCard key={item.title} title={item.title} elevation="low" className="legal-document-card">
                 <p className="legal-document-format">Formato: {item.format}</p>
-                <a className="legal-document-link" href={item.href} target="_blank" rel="noreferrer">
-                  Acessar edital <span aria-hidden="true">↗</span>
+                <a className="legal-document-link" href={item.href}>
+                  Acessar edital <span aria-hidden="true">→</span>
                 </a>
               </SiteCard>
             ))}

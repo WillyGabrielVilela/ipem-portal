@@ -184,3 +184,8 @@ A página `/perguntas-frequentes` exibe as imagens referenciadas no HTML legado 
 A GovBar continua sendo renderizada pelo componente oficial `GovBar` de `@uigovpe/components`. Foi adicionado tratamento de clique na área da barra para os controles identificáveis de diminuir/aumentar/restaurar texto e contraste, para que essas ações tenham comportamento real mesmo se a versão instalada não conectar os eventos internamente. O alto contraste é aplicado por uma classe no elemento `html`; o tamanho de texto é ajustado na raiz do documento. O botão de cookies continua ligado ao diálogo informativo.
 
 Esta alteração preserva as rotas e páginas do projeto. Como as dependências não puderam ser instaladas neste ambiente, executar `npm install`, `npm run typecheck` e `npm run build` antes de publicar. Se os controles da versão instalada usarem rótulos/atributos diferentes, os seletores de reconhecimento em `src/components/GovernmentBar.tsx` precisarão ser ajustados com base no DOM renderizado.
+
+
+## Arquitetura e inventário de migração
+
+Consulte [`docs/ARQUITETURA-E-MIGRACAO.md`](docs/ARQUITETURA-E-MIGRACAO.md) para a estrutura de pastas, rotas disponíveis, páginas com conteúdo pendente e links que permanecem externos intencionalmente. A navegação principal é centralizada em `src/config/site-navigation.ts`.

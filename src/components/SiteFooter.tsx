@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function SiteFooter() {
   return <footer className="site-footer">
     <div className="container footer-grid">
@@ -15,10 +16,10 @@ export default function SiteFooter() {
       </div>
       <div>
         <h2>Acesso rápido</h2>
-        <a href="/transparencia">Transparência</a>
-        <a href="/servicos">Serviços</a>
-        <a href="/noticias">Notícias</a>
-        <a href="/contato">Contato</a>
+        <Link href="/transparencia">Transparência</Link>
+        <Link href="/servicos">Serviços</Link>
+        <Link href="/noticias">Notícias</Link>
+        <Link href="/contato">Contato</Link>
       </div>
     </div>
     <div className="footer-bottom"><div className="container">© 2026 – Instituto de Pesos e Medidas do Estado de Pernambuco (IPEM/PE). Dados de contato reproduzidos da página inicial fornecida; validar antes da publicação.</div></div>

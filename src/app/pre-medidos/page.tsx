@@ -86,7 +86,7 @@ export default function PreMedidosPage() {
         <p>Consulte outras informações e canais do Instituto.</p>
         <div className="prem-actions">
           <SiteButton label="CML — Metrologia Legal" href="/cml" />
-          <SiteButton label="Ouvidoria" href="https://www.ipem.pe.gov.br/formulario-de-denuncia/" outlined />
+          <SiteButton label="Ouvidoria" href="/formulario-de-denuncia" outlined />
           <SiteButton label="Unidades" href="/unidades" outlined />
         </div>
       </section>

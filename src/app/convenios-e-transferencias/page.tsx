@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 const documents = [
   { title: "Convênio nº 14/2025 — IPEM/INMETRO", href: "https://www.ipem.pe.gov.br/wp-content/uploads/2026/09/Convênio-14-2025-IPEM-PE-3.pdf", description: "Documento de convênio disponibilizado em PDF.", type: "PDF" },
-  { title: "2º TA CV 21/2013-1", href: "http://www.ipem.pe.gov.br/2o-ta_cv_21-2013-1-3/", description: "Segundo termo aditivo ao convênio 21/2013-1.", type: "Documento institucional" },
-  { title: "Convênio Assinado", href: "http://www.ipem.pe.gov.br/convenio-assinado_compactado/", description: "Acesso ao documento identificado como convênio assinado.", type: "Documento institucional" },
-  { title: "Convênio de Cooperação Técnica 21/2013", href: "http://www.ipem.pe.gov.br/convenio-de-cooperacao-tecnica-21-2013_compactado/", description: "Documento do convênio de cooperação técnica 21/2013.", type: "Documento institucional" },
-  { title: "3º TA CV 21/2013-1", href: "http://www.ipem.pe.gov.br/3o-ta-cv-21_2013-1_compactado/", description: "Terceiro termo aditivo ao convênio 21/2013-1.", type: "Documento institucional" },
-  { title: "2º TA CV 21/2013-1 — arquivo 2", href: "http://www.ipem.pe.gov.br/2o-ta_cv_21-2013-1-2/", description: "Outra referência de arquivo para o segundo termo aditivo.", type: "Documento institucional" },
-  { title: "2º TA CV 21/2013-1 — arquivo 3", href: "http://www.ipem.pe.gov.br/2o-ta_cv_21-2013-1/", description: "Referência adicional do segundo termo aditivo listada no site de origem.", type: "Documento institucional" },
+  { title: "2º TA CV 21/2013-1", href: "/convenios-e-transferencias/segundo-termo-aditivo-21-2013", description: "Segundo termo aditivo ao convênio 21/2013-1.", type: "Página em migração" },
+  { title: "Convênio Assinado", href: "/convenios-e-transferencias/convenio-assinado", description: "Acesso ao documento identificado como convênio assinado.", type: "Página em migração" },
+  { title: "Convênio de Cooperação Técnica 21/2013", href: "/convenios-e-transferencias/convenio-cooperacao-tecnica-21-2013", description: "Documento do convênio de cooperação técnica 21/2013.", type: "Página em migração" },
+  { title: "3º TA CV 21/2013-1", href: "/convenios-e-transferencias/terceiro-termo-aditivo-21-2013", description: "Terceiro termo aditivo ao convênio 21/2013-1.", type: "Página em migração" },
+  { title: "2º TA CV 21/2013-1 — arquivo 2", href: "/convenios-e-transferencias/segundo-termo-aditivo-21-2013-arquivo-2", description: "Outra referência de arquivo para o segundo termo aditivo.", type: "Página em migração" },
+  { title: "2º TA CV 21/2013-1 — arquivo 3", href: "/convenios-e-transferencias/segundo-termo-aditivo-21-2013-arquivo-3", description: "Referência adicional do segundo termo aditivo listada no site de origem.", type: "Página em migração" },
 ];
 
 export default function ConveniosTransferenciasPage() {
@@ -23,7 +23,7 @@ export default function ConveniosTransferenciasPage() {
       <header className="agreements-heading">
         <p className="eyebrow">Transparência e prestação de contas</p>
         <h1>Convênios e Transferências</h1>
-        <p className="page-intro">Consulte os convênios e termos aditivos relacionados pelo IPEM-PE. Os links abaixo foram preservados conforme a página institucional de referência.</p>
+        <p className="page-intro">Consulte os convênios e termos aditivos relacionados pelo IPEM-PE. Os links abaixo foram organizados a partir do conteúdo de referência. Os itens marcados como página em migração ainda precisam ter seus arquivos originais recuperados e validados.</p>
       </header>
       <section className="agreements-section" aria-labelledby="agreements-list-title">
         <div className="agreements-section-heading">
@@ -35,7 +35,7 @@ export default function ConveniosTransferenciasPage() {
             <SiteCard key={`${document.href}-${index}`} title={document.title} elevation="low" className="agreements-card">
               <p className="agreements-document-type"><span aria-hidden="true">▤</span> {document.type}</p>
               <p>{document.description}</p>
-              <a className="agreements-link" href={document.href} target="_blank" rel="noopener noreferrer">Acessar documento <span aria-hidden="true">↗</span></a>
+              <a className="agreements-link" href={document.href}>Acessar documento <span aria-hidden="true">→</span></a>
             </SiteCard>
           ))}
         </div>
